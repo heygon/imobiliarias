@@ -1,12 +1,13 @@
 .card-header {
 	background-color: #3c4195;
-	color: #f9f9ff;	
+	color: #f9f9ff;
 }
 
 .card {
 	box-shadow: 3px 12px 5px #0000000d;
 	max-height: max-content;
 	min-height: 200px;
+	border-radius: 15px;
 }
 
 #galeria img {
@@ -29,5 +30,43 @@
 }
 
 .card-header {
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+
+.sub {
+	background-color: #eef0ef;
+	color: #3c4195;
+	border-bottom: solid 4px #3c4195;
+}
+
+.telefone {
+	color: #3c4195;
+	font-weight: 700;
+	font-size: 3.5em;
+}
+
+.seccard {
+	border: none;
+	box-shadow: none;
+}
+
+.primecard {
+	border-bottom: solid 5px yellow;
+}
+
+iframe {
+	border-radius: 25px;
+	box-shadow: 3px 12px 5px #0000000d;
+} 
+
+.menuimg {
+	width: 10px;
+	height: 10px;
+}
+
+.butao {
+	font-weight: 500;
+	font-size: 1.5em;
 	text-transform: uppercase;
 }
