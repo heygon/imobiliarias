@@ -1,0 +1,33 @@
+.card-header {
+	background-color: #3c4195;
+	color: #f9f9ff;	
+}
+
+.card {
+	box-shadow: 3px 12px 5px #0000000d;
+	max-height: max-content;
+	min-height: 200px;
+}
+
+#galeria img {
+	min-height: 200px;
+	max-height: 500px;
+}
+
+.icons {
+	width: 70px;
+	height: 70px;
+}
+
+.map iframe {
+	padding-bottom: 5px;
+}
+
+.video {
+	min-height: 400px;
+	max-height: 600px;
+}
+
+.card-header {
+	text-transform: uppercase;
+}
