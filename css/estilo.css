@@ -1,6 +1,7 @@
 .card-header {
 	background-color: #3c4195;
 	color: #f9f9ff;
+
 }
 
 .card {
@@ -43,8 +44,9 @@
 .telefone {
 	color: #3c4195;
 	font-weight: 700;
-	font-size: 3.5em;
+	font-size: x-large;
 }
+
 
 .seccard {
 	border: none;
@@ -70,3 +72,10 @@ iframe {
 	font-size: 1.5em;
 	text-transform: uppercase;
 }
+
+.icones {
+	text-align: left;
+}
+
+
+
