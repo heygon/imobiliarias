@@ -77,5 +77,48 @@ iframe {
 	text-align: left;
 }
 
+.busca	{
+	align-content: center;
+	border-top: solid 9px #3c4195;
+}
 
 
+.btn-pri {
+	background-color: #3c4195;
+	color: #f5f5f5;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.btn-pri:hover {
+	background-color: #f5f5f5;
+	color: #3c4195;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+
+.titulo {
+	color: #3b4091;
+	text-transform: uppercase;
+
+}
+
+.destaque {
+	background-color: #aaabaf;
+	color: #f9fafc;
+}
+
+.iconscase {
+	width: 33px;
+	height: 30px;
+}
+
+.minor	{
+	font-size: 0.7rem;
+}
+
+.btnfit {
+	font-size: 0.6rem;
+	top: 10px;
+}
