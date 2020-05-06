@@ -79,10 +79,10 @@ class Imob
                             <div class="col-md-8 col-sm-12">
                                 <div class="minor">COMPARTILHAR ESSA OFERTA:</div>
                                 <div class="icones pt-2">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $_SERVER['HTTP_HOST'].'?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
-                                    <a href="https://api.whatsapp.com/send?text=<?php echo $_SERVER['HTTP_HOST'].'?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
-                                    <a href="https://twitter.com/home?status=<?php echo $_SERVER['HTTP_HOST'].'?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
-                                    <a href="mailto:#?&subject=&body=<?php echo $_SERVER['HTTP_HOST'].'?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
+                                    <a href="https://api.whatsapp.com/send?text=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
+                                    <a href="https://twitter.com/home?status=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
+                                    <a href="mailto:#?&subject=&body=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-12 p-0 mt-3">

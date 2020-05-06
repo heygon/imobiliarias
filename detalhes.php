@@ -106,10 +106,10 @@
                 </div>
                 <div class="icones card-body">
                   <div class="row">
-                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
-                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
-                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
-                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/cemail.png"></a>
+                    <a class="col-3" href="https://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
+                    <a class="col-3" href="https://api.whatsapp.com/send?text=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
+                    <a class="col-3" href="https://twitter.com/home?status=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
+                    <a class="col-3" href="mailto:#?&subject=&body=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/cemail.png"></a>
                   </div>
                 </div>
               </div>
