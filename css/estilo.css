@@ -101,7 +101,8 @@ iframe {
 .titulo {
 	color: #3b4091;
 	text-transform: uppercase;
-
+	height: 55px;
+	font-size: 0.95em;
 }
 
 .destaque {

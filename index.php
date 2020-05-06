@@ -25,6 +25,11 @@
         <div class="col-sm-12 col-md-10">
           <div class="busca card">
             <div class="card-body">
+              
+            <div style=" float:right; position:relative; top:-70px; left:-60px; height:1px; width:1px; ">
+              <img src="img/diogenes.png" style="width:250px;" />
+            </div>
+
               <form class="form-group">
                 <div class="row">
                   <div class="col-md-4 col-sm-12">
@@ -118,7 +123,7 @@
     <div class="seccard card">
       <div class="row">
 
-        <?php $imob->listarImoveis() ?>
+        <?php $imob->listarImoveis('') ?>
 
       </div>
     </div>

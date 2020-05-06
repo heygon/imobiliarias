@@ -1,3 +1,8 @@
+<?php
+  require 'php/functions.php';
+?>
+
+
 <!doctype html>
 <html lang="pt-BR">
   <head>
@@ -25,7 +30,7 @@
       <div class="card text-center">
         <div class="primecard card-header">
           <h3>
-            <strong>Diogenes aluga - casa 3 quartos cond. mini chacara sobradinho df</strong>
+            <strong><?php echo $imob->detalhes($_GET['i'])['TituloImovel'] ?></strong>
           </h3>
         </div>  
 
@@ -37,43 +42,33 @@
               <!-- /////////////////// -->
               <div id="galeria" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
-                  <li data-target="#galeria" data-slide-to="0" class="active"><!-- <img src="img/1.jpg" class="menuimg img-fluid d-block w-100" alt="..."> --></li>
-                  <li data-target="#galeria" data-slide-to="1"><!-- <img src="img/2.jpg" class="menuimg img-fluid d-block w-100" alt="..."> --></li>
-                  <li data-target="#galeria" data-slide-to="2"><!-- <img src="img/3.jpg" class="menuimg img-fluid d-block w-100" alt="..."> --></li>
-                  <li data-target="#galeria" data-slide-to="3"><!-- <img src="img/4.jpg" class="menuimg img-fluid d-block w-100" alt="..."> --></li>
-                  <li data-target="#galeria" data-slide-to="4"><!-- <img src="img/5.jpg" class="menuimg img-fluid d-block w-100" alt="..."> --></li>
+                  
+                  <?php
+                    $in = 0;
+                    for ($i=0; $i < count($imob->detalhes($_GET['i'])['Galeria']) ; $i++) { 
+                    ?>
+                      <li data-target="#galeria" data-slide-to="<?php echo $i; ?>" class="<?php if($in == 0){ echo 'active'; } ?>"></li>
+                    <?php
+                    $in = 1;
+                    }
+                  ?>
                 </ol>
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/1.jpg" class="img-fluid d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                  
+                  <?php
+                    $in = 0;
+                    for ($i=0; $i < count($imob->detalhes($_GET['i'])['Galeria']) ; $i++) { 
+                    ?>
+                    
+                      <div class="carousel-item <?php if($in == 0){ echo 'active'; } ?>  ">
+                        <img src="<?php echo $imob->detalhes($_GET['i'])['Galeria'][$i]['URL']; ?>" style="width:100%">
+                        <div class="carousel-caption d-none d-md-block"></div>
+                      </div>
 
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/2.jpg" class="img-fluid d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/3.jpg" class="img-fluid d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/4.jpg" class="img-fluid d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/5.jpg" class="img-fluid d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      
-                    </div>
-                  </div>
+                    <?php
+                    $in = 1;
+                    }
+                  ?>
                 </div>
                 <a class="carousel-control-prev" href="#galeria" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -92,15 +87,15 @@
             <div class="col-lg-4 col-sm-12">
               <div class="card">
                 <div class="card-header sub">
-                  <strong>Valor do imóvel - R$ 150.000,00</strong>
+                  <strong>Valor do imóvel - R$ <?php echo number_format(intval($imob->detalhes($_GET['i'])['PrecoVenda']),2,",","."); ?></strong>
                 </div>
-                <div class="card-body">
+                <div class="card-body text-left">
                   <ul>
-                    <li>Localização</li>
-                    <li>2 quartos</li>
-                    <li>Area Privativa</li>
-                    <li>180 m<sup>2</sup></li>
-                    <li>código do imóvel : 811214214</li>
+                    <li>Código do imóvel : <?php echo $imob->detalhes($_GET['i'])['CodigoImovel']; ?></li>
+                    <li><?php echo $imob->detalhes($_GET['i'])['Cidade'].' - '.$imob->detalhes($_GET['i'])['UF']; ?></li>
+                    <?php if(!$imob->detalhes($_GET['i'])['QtdDormitorios'] == ''){ echo '<li>'.$imob->detalhes($_GET['i'])['QtdDormitorios'].' quartos</li>'; }; ?> 
+                    <?php if(!$imob->detalhes($_GET['i'])['AreaUtil'] == ''){ echo '<li>Área útil: '.$imob->detalhes($_GET['i'])['AreaUtil'].'m<sup>2</sup></li>'; } ?>
+                    <li>Área total: <?php echo $imob->detalhes($_GET['i'])['AreaTotal']; ?> m<sup>2</sup></li>
                   </ul>
                 </div>
               </div>
@@ -110,10 +105,12 @@
                  <strong> Compartilhe essa oferta</strong>
                 </div>
                 <div class="icones card-body">
-                  <a href="#"><img class="icons" src="img/face.svg"></a>
-                  <a href="#"><img class="icons" src="img/whats.svg"></a>
-                  <a href="#"><img class="icons" src="img/twiiter.svg"></a>
-                  <a href="#"><img class="icons" src="img/email.svg"></a>
+                  <div class="row">
+                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
+                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
+                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
+                    <a class="col-3" href="#" target="_blank"><img class="icons" src="img/cemail.png"></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -143,14 +140,7 @@
                  <strong>Informações completas do imóvel</strong>
                 </div>
                 <div class="card-body">
-                  OPORTUNIDADE ÚNICA
-
-                  quartos não sei das quantas
-                  180 metros
-                  muito bom o apartamento
-                  bla bla bla
-                  troco por cachorro.
-
+                  <?php echo $imob->detalhes($_GET['i'])['Observacao']; ?>
                 </div> 
               </div>  
               
@@ -159,13 +149,28 @@
           
           </br>
           
-          <div class="row">
-            <iframe class="col" width="560" height="400" src="https://www.youtube.com/embed/Cysi5UA2uJY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+          <?php
+            if(!$imob->detalhes($_GET['i'])['Video'] == ''){
+              ?>
+              <div class="row">
+                <iframe class="col" width="560" height="400" src="<?php echo $imob->detalhes($_GET['i'])['Video']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <?php
+            }
+          ?>
+          
+
           </br>
-          <div class="row">
-            <iframe class="col" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.5768634008177!2d-47.882391854651615!3d-15.79482151065513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3b1e02415707%3A0xc6ade89bb9057898!2sPlanalto%20Central!5e0!3m2!1spt-BR!2sbr!4v1586735445165!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
-          </div>
+          <?php
+            if(!$imob->detalhes($_GET['i'])['Mapa'] == ''){
+              ?>
+              <div class="row">
+                <iframe class="col" src="<?php echo $imob->detalhes($_GET['i'])['Mapa']; ?>" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
+              </div>
+              <?php
+            }
+          ?>
+          
           <div class="col-12">&nbsp;</div>
           
         </div>
@@ -179,7 +184,10 @@
               </div>
               <div class="card-body">
                 <div class="talk col-12">
-                  <h1 class="telefone"><img class="icons" src="img/whats.svg"> 61 99999 9999</h1>
+                  <h1 class="telefone">
+                    <img class="icons" src="img/cwhatsapp.png">
+                    (61) 99999-9999
+                  </h1>
                 </div>
 
                 <div class="col-12">&nbsp;</div>
