@@ -47,12 +47,31 @@
                     $in = 0;
                     for ($i=0; $i < count($imob->detalhes($_GET['i'])['Galeria']) ; $i++) { 
                     ?>
-                      <li data-target="#galeria" data-slide-to="<?php echo $i; ?>" class="<?php if($in == 0){ echo 'active'; } ?>"></li>
+                      <li data-target="#galeria" data-slide-to="<?php echo $i; ?>" class="<?php if($in == 0){ echo 'active'; } ?>">
+                        <img src="<?php echo $imob->detalhes($_GET['i'])['Galeria'][$i]['URL']; ?>" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border">
+                      </li>
                     <?php
                     $in = 1;
                     }
                   ?>
                 </ol>
+
+                <style>
+                  .carousel-indicators{
+                    bottom:40px
+                  }
+                  .carousel-indicators li{
+                    text-indent:0px;
+                    margin-right:20px;
+                  }
+                  .carousel-indicators li.active{
+                    opacity:1;
+                  }
+                  .carousel-indicators li.active img{
+                    border:solid 2px #fff;
+                  }
+                </style>
+
                 <div class="carousel-inner">
                   
                   <?php

@@ -28,72 +28,125 @@ class Imob
 
     public function listarImoveis($busca){
         
-        if($busca == ''){
-            $imob = $this->query("SELECT * FROM imovies ORDER BY id DESC");
-        }else{
-            
-            $imob = $this->query("SELECT * FROM imovies ORDER BY id DESC");
+        $sql = "SELECT * FROM imovies WHERE ";
 
+        if(isset($busca['tipoNegocio'])){
+            if($busca['tipoNegocio'] == '' || $busca['tipoNegocio'] == '--'){}else{
+                $sql .= " VendaAluga = '".$busca['tipoNegocio']."' AND ";
+            }
+        }
+        if(isset($busca['Cidade'])){
+            if($busca['Cidade'] == '' || $busca['Cidade'] == '--'){}else{
+                $sql .= " Cidade = '".$busca['Cidade']."' AND ";
+            }
+        }
+        if(isset($busca['Preco'])){
+            if($busca['Preco'] == '' || $busca['Preco'] == '--'){}else{
+
+                if($busca['Preco'] == 1){
+                    $sql .= " PrecoVenda > 100000 AND PrecoVenda < 200000 AND ";
+                }else if($busca['Preco'] == 2){
+                    $sql .= " PrecoVenda > 200000 AND PrecoVenda < 300000 AND ";
+                }else if($busca['Preco'] == 3){
+                    $sql .= " PrecoVenda > 300000 AND PrecoVenda < 500000 AND ";
+                }else if($busca['Preco'] == 4){
+                    $sql .= " PrecoVenda > 500000 AND PrecoVenda < 800000 AND ";
+                }else if($busca['Preco'] == 5){
+                    $sql .= " PrecoVenda > 800000 AND ";
+                } 
+            }
+        }
+        if(isset($busca['quarto'])){
+            if($busca['quarto'] == '' || $busca['quarto'] == '--'){}else{
+                $sql .= " QtdDormitorios = '".$busca['quarto']."' AND ";
+            }
+        }
+        if(isset($busca['garagem'])){
+            if($busca['garagem'] == '' || $busca['garagem'] == '--'){}else{
+                if($busca['garagem'] == 1){
+                    $sql .= " QtdVagas > 1 AND ";
+                }
+            }
+        }
+        if(isset($busca['tipoImovel'])){
+            if($busca['tipoImovel'] == '' || $busca['tipoImovel'] == '--'){}else{
+                $sql .= " TipoImovel = '".$busca['tipoImovel']."' AND ";
+            }
         }
 
+        //[tipoNegocio] => -- [Cidade] => -- [Preco] => -- [quarto] => -- [garagem] => -- [tipoImovel]
 
-        while($row = $imob->fetch_array()){
-        ?>
-            <div class="col-md-4 col-sm-12">
-                <div class="card">
-                    <a href="detalhes.php?i=<?php echo $row['id']; ?>">
-                        <div style="height:200px; overflow:hidden">
-                            <?php
-                                $img = $this->query("SELECT * FROM Fotos WHERE Imovel = '".$row['id']."' ORDER BY id ASC LIMIT 1");
-                                $im = $img->fetch_array();
-                            ?>
-                            <img src="<?php echo $im['URLArquivo']; ?>" class="card-img-top">
-                        </div>
-                    </a>
+        $sql .= " Status = 1 ORDER BY id DESC";
 
-                    <div class="card-body">
+
+        //echo $sql;
+
+
+        $imob = $this->query($sql);
+
+
+        if(!mysqli_num_rows($imob)){
+
+            echo '<div class="col-md-12 col-sm-12 alert alert-warning text-center">Nenhum resultado encontrado</div>';
+        }else{
+            while($row = $imob->fetch_array()){
+            ?>
+                <div class="col-md-4 col-sm-12">
+                    <div class="card">
                         <a href="detalhes.php?i=<?php echo $row['id']; ?>">
-                            <h6 class="titulo card-title">
-                                <?php echo $row['TituloImovel']; ?>
-                            </h6>
+                            <div style="height:200px; overflow:hidden">
+                                <?php
+                                    $img = $this->query("SELECT * FROM Fotos WHERE Imovel = '".$row['id']."' ORDER BY id ASC LIMIT 1");
+                                    $im = $img->fetch_array();
+                                ?>
+                                <img src="<?php echo $im['URLArquivo']; ?>" class="card-img-top">
+                            </div>
                         </a>
-                        <h6>
-                            <?php echo $row['Cidade'].'-'.$row['UF']; ?>
-                        </h6>
-                    </div>
-                    <div class="destaque col-12 p-2" style="height:50px;">
-                    <?php
-                        if(!$row['PrecoVenda'] == ''){
-                            ?>
-                                <h5>Aluguel: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
-                            <?php
-                        }else{
-                            ?>
-                                <h5>Não informado</h5>
-                            <?php
-                        }
-                    ?>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-8 col-sm-12">
-                                <div class="minor">COMPARTILHAR ESSA OFERTA:</div>
-                                <div class="icones pt-2">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
-                                    <a href="https://api.whatsapp.com/send?text=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
-                                    <a href="https://twitter.com/home?status=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
-                                    <a href="mailto:#?&subject=&body=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
+
+                        <div class="card-body">
+                            <a href="detalhes.php?i=<?php echo $row['id']; ?>">
+                                <h6 class="titulo card-title">
+                                    <?php echo $row['TituloImovel']; ?>
+                                </h6>
+                            </a>
+                            <h6>
+                                <?php echo $row['Cidade'].'-'.$row['UF']; ?>
+                            </h6>
+                        </div>
+                        <div class="destaque col-12 p-2" style="height:50px;">
+                        <?php
+                            if(!$row['PrecoVenda'] == ''){
+                                ?>
+                                    <h5>Aluguel: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
+                                <?php
+                            }else{
+                                ?>
+                                    <h5>Não informado</h5>
+                                <?php
+                            }
+                        ?>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="minor">COMPARTILHAR ESSA OFERTA:</div>
+                                    <div class="icones pt-2">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
+                                        <a href="https://api.whatsapp.com/send?text=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
+                                        <a href="https://twitter.com/home?status=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
+                                        <a href="mailto:#?&subject=&body=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-12 p-0 mt-3">
+                                    <a class="btnfit btn btn-pri col-12" href="detalhes.php?i=<?php echo $row['id']; ?>">Saiba mais</a>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-12 p-0 mt-3">
-                                <a class="btnfit btn btn-pri col-12" href="detalhes.php?i=<?php echo $row['id']; ?>">Saiba mais</a>
-                            </div>
                         </div>
                     </div>
+                    <br>
                 </div>
-                <br>
-            </div>
-        <?php
+            <?php
+            }
         }
     }
 
