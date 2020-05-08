@@ -219,31 +219,31 @@
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <input class="form-control" type="text" placeholder="Nome" name="nome" id="nome">
+                  <input class="form-control nomeEmail" type="text" placeholder="Nome" name="nome" id="nome">
                 </div>
 
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <input class="form-control" type="text" placeholder="Telefone" name="Telefone" id="nome">
+                  <input class="form-control telefoneEmail" type="text" placeholder="Telefone" name="Telefone" id="nome">
                 </div>
 
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <input class="form-control" type="text" placeholder="E-mail" name="Email" id="nome">
+                  <input class="form-control emailEmail" type="text" placeholder="E-mail" name="Email" id="nome">
                 </div>
                 
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <textarea class="form-control" rows="7"></textarea>
+                  <textarea class="form-control corpoEmail" rows="7">Olá, eu gostaria de obter mais informações sobre este imóvel Código : <?php echo $imob->detalhes($_GET['i'])['CodigoImovel'].' - '.$imob->detalhes($_GET['i'])['TituloImovel'].' - '.$imob->detalhes($_GET['i'])['Cidade'].' - '.$imob->detalhes($_GET['i'])['UF']; ?></textarea>
                 </div>
 
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <h1 class="butao btn btn-success col-12"><strong>enviar</strong></h1>
+                  <h1 class="butao btn btn-success col-12 btnEnviarContato"><strong>enviar</strong></h1>
                 </div>
               </div>
 
@@ -253,6 +253,9 @@
         </div>
 
 
+        <div class="col-12">&nbsp;</div>
+        <div class="col-12">&nbsp;</div>
+        <div class="col-12">&nbsp;</div>
 
       <!-- fim da row -->
       </div>
@@ -261,8 +264,77 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript" src="js/jquery-3.4.1.slim.min.js" ></script>
+    <script type="text/javascript" src="js/jquery.js" ></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+
+    <script>
+      $(document).ready(function(){
+
+        
+        $('.btnEnviarContato').click(function(){
+          $('.btnEnviarContato').hide().before('<div class=" load col-12 center-align ">Enviado...</div>');
+
+          var nomeEmail = $('.nomeEmail').val();
+          var telefoneEmail = $('.telefoneEmail').val();
+          var emailEmail = $('.emailEmail').val();
+          var corpoEmail = $('.corpoEmail').val();
+
+
+
+          $.ajax({
+            url: 'php/functions.php',
+            type: 'POST',
+            data:
+              {
+                enviarContato:'',
+                nomeEmail,
+                telefoneEmail,
+                emailEmail,
+                corpoEmail,
+              }
+          })
+          .done(function(xhr) {
+            console.log(xhr);
+            if(xhr.resp = 's'){
+          
+              $('.load').remove();
+              $('.btnEnviarContato').before('<div class=" load alert alert-success col-12 text-center ">Sucesso</div>');
+              setTimeout(function(){
+                $('.load').remove();
+                $('.btnEnviarContato').fadeIn();
+              },3000);
+          
+            }else{
+          
+              $('.load').remove();
+              $('.btnEnviarContato').before('<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>');
+              setTimeout(function(){
+                $('.load').remove();
+                $('.btnEnviarContato').fadeIn();
+              },3000);
+          
+            }
+
+          })
+          .fail(function() {
+            
+            $('.load').remove();
+            $('.btnEnviarContato').before('<div class=" load alert alert-success col-12 text-center ">Erro ao enviar</div>');
+            setTimeout(function(){
+              $('.load').remove();
+              $('.btnEnviarContato').fadeIn();
+            },3000);
+
+          });
+
+
+        });
+
+
+      });
+    </script>
+
   </body>
 </html>

@@ -17,7 +17,8 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        $con = mysqli_connect('localhost','root','root','imobiliaria');
+        //$con = mysqli_connect('localhost','root','root','imobiliaria');
+        $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
     }
@@ -143,10 +144,10 @@ class Imob
                                 <div class="col-md-8 col-sm-12">
                                     <div class="minor">COMPARTILHAR ESSA OFERTA:</div>
                                     <div class="icones pt-2">
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
-                                        <a href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
-                                        <a href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
-                                        <a href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
+                                        <a href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
+                                        <a href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
+                                        <a href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12 p-0 mt-3">
@@ -213,12 +214,57 @@ class Imob
         $dados['Video']           = $row['Video'];
         $dados['Mapa']            = $row['Mapa'];
         
-
-
-
         return $dados;
 
     }
+
+
+    public function enviarContato($nomeEmail,$telefoneEmail,$emailEmail,$corpoEmail)
+    {
+        // subject
+        $subject = 'Contato enviado pelo site';
+
+        // message
+        $message = '
+        <html>
+        <head>
+            <title>Contato enviado pelo site</title>
+        </head>
+        <body>
+            <h6><strong>Contato enviado pelo site</strong></h6>
+            <table>
+                <tr>
+                    <td>Nome</td><td>'.$nomeEmail.'</td>
+                </tr>
+                <tr>
+                    <td>Telefone</td><td>'.$telefoneEmail.'</td>
+                </tr>
+                <tr>
+                    <td>Email</td><td>'.$emailEmail.'</td>
+                </tr>
+                <tr>
+                    <td>Contato</td><td>'.utf8_decode($corpoEmail).'</td>
+                </tr>
+                <tr>
+                    <td>Enviado em: </td><td>'.date('d/m/Y H:i:s').'</td>
+                </tr>
+            </table>
+        </body>
+        </html>
+        ';
+
+        // To send HTML mail, the Content-type header must be set
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+        // Additional headers
+        $headers .= 'To: gshlucas6@gmail.com' . "\r\n";
+        $headers .= 'From: Sistema <noreply@imobiliariadiogenes.com.br>' . "\r\n";
+
+        // Mail it
+        mail($to, $subject, $message, $headers);
+    }
+
  
     public function imoveis() {
         $xml = simplexml_load_file("imob.xml");
@@ -359,6 +405,12 @@ $imob = new Imob();
 //$imob->imoveis();
 //$imob->json();
 //$imob->imagem();
+
+
+if(isset($_POST['enviarContato'])){
+    $imob->enviarContato($_POST['nomeEmail'],$_POST['telefoneEmail'],$_POST['emailEmail'],$_POST['corpoEmail']);
+}
+
 
 
 
