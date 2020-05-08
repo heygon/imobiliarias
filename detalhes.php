@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo.css">
     <title>Site Imóveis</title>
+
+
+    <meta property="og:title" content="Diógenes Imóveis"/>
+    <meta property="og:image" content="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/02/logo-1.png"/>
+    <meta property="og:url" content="https://imobiliariadiogenes.com.br"/>
+    <meta property="og:site_name" content="Diógenes Imóveis"/>
+
   </head>
   <body>
     <div class="container-fluid">
@@ -41,7 +48,7 @@
               <!-- //////GALERIA////// -->
               <!-- /////////////////// -->
               <div id="galeria" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
+                <ol class="carousel-indicators" style="width:80%; margin-left:10%; bottom:0px; height:70px; overflow:auto">
                   
                   <?php
                     $in = 0;
@@ -125,10 +132,10 @@
                 </div>
                 <div class="icones card-body">
                   <div class="row">
-                    <a class="col-3" href="https://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
-                    <a class="col-3" href="https://api.whatsapp.com/send?text=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
-                    <a class="col-3" href="https://twitter.com/home?status=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
-                    <a class="col-3" href="mailto:#?&subject=&body=http://<?php echo $_SERVER['HTTP_HOST'].'/detalhes.php?i='.$_GET['i']; ?>" target="_blank"><img class="icons" src="img/cemail.png"></a>
+                    <a class="col-3" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
+                    <a class="col-3" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
+                    <a class="col-3" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
+                    <a class="col-3" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/cemail.png"></a>
                   </div>
                 </div>
               </div>

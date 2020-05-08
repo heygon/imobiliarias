@@ -26,13 +26,13 @@
           <div class="busca card">
             <div class="card-body">
               
-            <div style=" float:right; position:relative; top:-70px; left:-60px; height:1px; width:1px; ">
+            <div class="imagemDiogenes" style=" float:right; position:relative; top:-70px; left:-60px; height:1px; width:1px; ">
               <img src="img/diogenes.png" style="width:250px;" />
             </div>
 
               <form method="get" action="index.php" class="form-group">
                 <div class="row">
-                  <div class="col-md-4 col-sm-12 pl-0">
+                  <div class="col-md-4 col-sm-12 pl-0 campoBusca">
                     <label>Tipo de negócio</label>
                     <select name="tipoNegocio" class="form-control">
                       <option value="--">Selecione</option>
@@ -40,7 +40,7 @@
                       <option value="2" <?php if(isset($_GET['tipoNegocio'])){ if($_GET['tipoNegocio'] == 2){ echo 'selected'; }  } ?> >Aluguel</option>
                     </select>
                   </div>
-                  <div class="col-md-4 col-sm-12">
+                  <div class="col-md-4 col-sm-12 campoBusca">
                     <label>Cidade</label>
                     <select name="Cidade" class="form-control">
                     <option value="--">Selecione</option>
@@ -63,7 +63,7 @@
                       <option value="Unaí" <?php if(isset($_GET['Cidade'])){ if($_GET['Cidade'] == 'Unaí'){ echo 'selected'; }  } ?> >Unaí</option>
                     </select>
                   </div>
-                  <div class="col-md-4 col-sm-12">
+                  <div class="col-md-4 col-sm-12 campoBusca">
                     <label>Preço</label>
                     <select name="Preco" class="form-control">
                       <option value="--">Selecione</option>
@@ -76,7 +76,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4 col-sm-12">
+                  <div class="col-md-4 col-sm-12 mt-2 campoBusca2">
                     <label>Quantidade de quartos</label>
                     <select name="quarto" class="form-control">
                       <option value="--">Selecione</option>
@@ -87,7 +87,7 @@
                       <option value="5" <?php if(isset($_GET['quarto'])){ if($_GET['quarto'] == 5){ echo 'selected'; } } ?>>Acima de 5 quartos</option>
                     </select>
                   </div>
-                  <div class="col-md-4 col-sm-12">
+                  <div class="col-md-4 col-sm-12 mt-2 campoBusca2">
                     <label>Garagem</label>
                     <select name="garagem" class="form-control">
                       <option value="--">Selecione</option>  
@@ -95,7 +95,7 @@
                       <option value="2"  <?php if(isset($_GET['garagem'])){ if($_GET['garagem'] == 2){ echo 'selected'; } } ?>>Não</option>
                     </select>
                   </div>
-                  <div class="col-md-4 col-sm-12">
+                  <div class="col-md-4 col-sm-12 mt-2 campoBusca2">
                     <label>Tipo de imóvel</label>
                     <select name="tipoImovel" class="form-control">
                       <option value="--">Selecione</option>
@@ -107,16 +107,15 @@
                     </select>
                   </div>
                 </div>
-                <div class="row">
-                  <!-- <div class="col-md-4 col-sm-12">
-                    <label>Código do imóvel</label>
-                    <select name="codigoImovel" class="form-control">
-                      <option value="true">Sim</option>
-                      <option value="false">Não</option>
-                    </select>
-                  </div> -->
 
-                  <div class="col-6 offset-3">
+                <div class="col-md-12 col-sm-12 p-0 campoBuscaTdo mt-3">
+                  <label class="col-12 pl-0">Palavra chave</label>    
+                  <input type="text" class="pl-0 form-control col-12 pl-2" name="chave" placeholder="Pesquisar por código ou palavra chave" value="<?php if(isset($_GET['chave'])){ echo $_GET['chave'];  } ?>">
+                </div>
+
+                <div class="row">
+
+                  <div class="col-6 offset-3 btnBuscar">
                     <label>&nbsp;</label>
                     <input type="submit" class="btn btn-pri col-12" value="Buscar imóvel"/>
                   </div>
@@ -143,12 +142,17 @@
           if(isset($_GET)){
             $imob->listarImoveis($_GET);
           }else{
-            $imob->listarImoveis('');
+            $imob->listarImoveis($_GET);
           }
         ?>
 
       </div>
     </div>
+
+    <div class="col-12">&nbsp;</div>
+    <div class="col-12">&nbsp;</div>
+    <div class="col-12">&nbsp;</div>
+    <div class="col-12">&nbsp;</div>
 
 
 

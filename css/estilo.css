@@ -123,3 +123,45 @@ iframe {
 	font-size: 0.6rem;
 	top: 10px;
 }
+
+
+
+@media screen AND (max-width:780px){
+	.campoBusca:first-child{
+		padding-left:15px !important;
+		padding-right:30px !important;
+		width:100% !important;
+		min-width:100% !important;
+		max-width:100% !important;
+	}
+	.campoBusca{
+		padding-right:30px !important;
+		width:100% !important;
+		min-width:100% !important;
+		max-width:100% !important;
+	}
+	.campoBusca2{
+		padding-right:30px !important;
+		width:100% !important;
+		min-width:100% !important;
+		max-width:100% !important;
+	}
+	.campoBuscaTdo{
+		padding-right:15px !important;
+		width:100% !important;
+		min-width:100% !important;
+		max-width:100% !important;
+	}
+
+	.btnBuscar{
+		padding:0px !important;
+		width:86% !important;
+		min-width:86% !important;
+		max-width:86% !important;
+		margin-left:5% !important;
+	}
+
+	.imagemDiogenes{
+		display: none;
+	}
+}
