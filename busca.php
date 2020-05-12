@@ -30,7 +30,7 @@
               <img src="img/diogenes.png" style="width:250px;" />
             </div>
 
-              <form method="get" action="busca.php" class="form-group">
+              <form method="get" action="index.php" class="form-group">
                 <div class="row">
                   <div class="col-md-4 col-sm-12 pl-0 campoBusca">
                     <label>Tipo de negócio</label>
@@ -136,27 +136,15 @@
 
     <p>&nbsp;</p>
     <div class="seccard card">
-      
+      <div class="row">
 
-        <div class="col-12" style="background:#ededed; padding:20px; border-radius:5px;">
-          <div class="row">
-            
-            <div class="col-12"><h3><strong>Imóveis para venda</h3></strong></div>
-            <div class="col-12">&nbsp;</div>
-            <?php $imob->listarImoveisCompra(); ?>
-          </div>
-        </div>
-        
-        <div class="col-12">&nbsp;</div>
-
-        <div class="col-12" style="background:#ebebeb; padding:20px; border-radius:5px;">
-          <div class="row">
-            
-            <div class="col-12"><h3><strong>Imóveis para aluguel</strong></h3></div>
-            <div class="col-12">&nbsp;</div>
-            <?php $imob->listarImoveisAluguel(); ?>
-          </div>
-        </div>
+        <?php
+          if(isset($_GET)){
+            $imob->listarImoveis($_GET);
+          }else{
+            $imob->listarImoveis($_GET);
+          }
+        ?>
 
       </div>
     </div>
@@ -167,11 +155,7 @@
     <div class="col-12">&nbsp;</div>
 
 
-    <style>
-      .pagination{
-        display:none;
-      }
-    </style>
+
 
      </div>
     <!-- FIM DO CONTAINER -->

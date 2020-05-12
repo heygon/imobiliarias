@@ -123,7 +123,14 @@ iframe {
 	font-size: 0.6rem;
 	top: 10px;
 }
-
+.prepagination{
+	padding: 0px !important;
+    width: 60% !important;
+    min-width: 60% !important;
+    max-width: 60% !important;
+    margin-left: calc(50% - 15%);
+	overflow: auto;
+}
 
 
 @media screen AND (max-width:780px){
@@ -163,5 +170,14 @@ iframe {
 
 	.imagemDiogenes{
 		display: none;
+	}
+
+	.prepagination{
+		padding:0px !important;
+		width:80% !important;
+		min-width:80% !important;
+		max-width:80% !important;
+		margin-left:10% !important;
+		overflow: auto;
 	}
 }

@@ -17,8 +17,8 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        //$con = mysqli_connect('localhost','root','root','imobiliaria');
-        $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
+        $con = mysqli_connect('localhost','root','root','imobiliaria');
+        //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
     }
@@ -97,7 +97,27 @@ class Imob
 
         $imob = $this->query($sql);
 
+        $this->corpoResultado($imob);
+        
+    }
 
+    public function listarImoveisCompra(){
+
+        $imob = $this->query("SELECT * FROM imovies WHERE VendaAluga = 1 AND Status = 1 ORDER BY rand() LIMIT 3 ");
+        $this->corpoResultado($imob);
+
+    }
+
+    public function listarImoveisAluguel(){
+
+        $imob = $this->query("SELECT * FROM imovies WHERE VendaAluga = 2 AND Status = 1 ORDER BY rand() LIMIT 3");
+        $this->corpoResultado($imob);
+
+    }
+
+
+    public function corpoResultado($imob)
+    {
         if(!mysqli_num_rows($imob)){
 
             echo '<div class="col-md-12 col-sm-12 alert alert-warning text-center">Nenhum resultado encontrado</div>';
@@ -164,7 +184,7 @@ class Imob
             $getTotal = $this->query("SELECT id FROM imovies");
             $num = round(mysqli_num_rows($getTotal) / 12);
 
-            echo '<nav class=" col-6 offset-3 ">';
+            echo '<nav class=" col-6 offset-3 prepagination ">';
             echo '<ul class="pagination">';
                 for ($i=0; $i < $num; $i++) { 
                     echo '<li class="page-item  ';
@@ -180,7 +200,6 @@ class Imob
             
         }
     }
-
 
     public function detalhes($id)
     {
@@ -267,20 +286,22 @@ class Imob
 
  
     public function imoveis() {
-        $xml = simplexml_load_file("imob.xml");
+        //$xml = simplexml_load_file("imob.xml");
+        $xml = simplexml_load_file("https://www.okeimoveis.com.br/gestao/webservices/IntegracaoImoveisOke.webservice.php?ccu=2039");
 
         echo '<pre>';
 
         $xml = $xml->Imoveis->Imovel;
-        //print_r($xml[0]);
+        //print_r($xml[1]);
 
         
         for ($i=0; $i < count($xml) ; $i++) { 
 
-            $titulo = trim($xml[$i]->TituloImovel);
-            //echo "SELECT CodigoImovel FROM imovies WHERE CodigoImovel = '".$titulo."' ";
 
-            $v = $this->con()->query("SELECT CodigoImovel FROM imovies WHERE CodigoImovel = '".$titulo."' ");
+            $confere = $this->query("SELECT CodigoImovel FROM imovies WHERE CodigoImovel = '" . trim($xml[$i]->CodigoImovel) . "' ");
+            if(!mysqli_num_rows($confere)){
+
+                $vendaAluga = (trim($xml[$i]->PrecoVenda) == '' || trim($xml[$i]->PrecoVenda) == null ) ? 2 : 1 ;
 
                 $this->query("
                     INSERT INTO imovies (
@@ -309,7 +330,11 @@ class Imob
                         QtdBanheiros,
                         QtdVagas,
                         Observacao,
-                        Caracteristicas
+                        Caracteristicas,
+                        Video,
+                        Status,
+                        VendaAluga,
+                        Mapa
                     ) VALUES(
                         '".trim($xml[$i]->CodigoImovel)."',
                         '".trim($xml[$i]->TipoImovel)."',
@@ -336,10 +361,39 @@ class Imob
                         '".trim($xml[$i]->QtdBanheiros)."',
                         '".trim($xml[$i]->QtdVagas)."',
                         '".trim($xml[$i]->Observacao)."',
-                        '".trim($xml[$i]->Caracteristicas)."'
+                        '".trim($xml[$i]->Caracteristicas)."',
+                        '".trim($xml[$i]->Video)."',
+                        '1',
+                        '". $vendaAluga ."',
+                        ''
                     )
                 ");
-            //}
+            
+
+                // Recupera o último ID de anúncio inserido
+                $lastId = $this->query("SELECT id FROM imovies ORDER BY id DESC LIMIT 1 ");
+                $lastId = $lastId->fetch_array();
+
+                // Faz o parse das imagens e insere no banco com a ID do anuncio
+                for ($f=0; $f < count($xml[$i]->Fotos->Foto) ; $f++) { 
+
+                    $this->query("
+                        INSERT INTO Fotos (
+                            NomeArquivo,
+                            URLArquivo,
+                            Principal,
+                            Alterada,
+                            Imovel
+                        ) VALUES(
+                            '".trim($xml[$i]->Fotos->Foto[$f]->NomeArquivo)."',
+                            '".trim($xml[$i]->Fotos->Foto[$f]->URLArquivo)."',
+                            '".trim($xml[$i]->Fotos->Foto[$f]->Principal)."',
+                            '".trim($xml[$i]->Fotos->Foto[$f]->Alterada)."',
+                            '".$lastId['id']."'
+                        )
+                    ");
+                }
+            }
             
         }
         
@@ -355,46 +409,6 @@ class Imob
         echo json_encode($xml);
         echo '</pre>';
     }
-    
-    
-    public function imagem(){
-        $xml = simplexml_load_file("imob.xml");
-
-        echo '<pre>';
-        
-        //echo $xml[0]->SubTipoImovel;
-        $xml = $xml = $xml->Imoveis->Imovel;
-        
-        for ($i=0; $i < count($xml); $i++) { 
-
-            //echo json_encode($xml[$i]->Fotos);
-
-            $im = $i + 1;
-            for ($f=0; $f < 30; $f++) { 
-
-                if(!$xml[$i]->Fotos->Foto[$f]->URLArquivo == ''){
-                    $this->query("
-                        INSERT INTO Fotos (
-                            NomeArquivo,
-                            URLArquivo,
-                            Principal,
-                            Alterada,
-                            Imovel
-                        ) VALUES(
-                            '".trim($xml[$i]->Fotos->Foto[$f]->NomeArquivo)."',
-                            '".trim($xml[$i]->Fotos->Foto[$f]->URLArquivo)."',
-                            '".trim($xml[$i]->Fotos->Foto[$f]->Principal)."',
-                            '".trim($xml[$i]->Fotos->Foto[$f]->Alterada)."',
-                            '".$im."'
-                        )
-                    ");
-                }
-
-            }
-        }
-
-        echo '</pre>';
-    }
  
     
 
@@ -404,7 +418,6 @@ $imob = new Imob();
 
 //$imob->imoveis();
 //$imob->json();
-//$imob->imagem();
 
 
 if(isset($_POST['enviarContato'])){
