@@ -29,6 +29,8 @@ class Imob
 
     public function listarImoveis($busca){
         
+        //print_r($busca);
+
         if(isset($busca['p'])){
             $p = $busca['p'];
         }else{
@@ -430,6 +432,10 @@ if(isset($_POST['listarImoveisCompra'])){
 
 if(isset($_POST['listarImoveisAluguel'])){
     $imob->listarImoveisAluguel();
+}
+
+if(isset($_GET['corpoResultado'])){
+    $imob->listarImoveis($_GET);
 }
 
 
