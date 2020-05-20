@@ -424,7 +424,13 @@ if(isset($_POST['enviarContato'])){
     $imob->enviarContato($_POST['nomeEmail'],$_POST['telefoneEmail'],$_POST['emailEmail'],$_POST['corpoEmail']);
 }
 
+if(isset($_POST['listarImoveisCompra'])){
+    $imob->listarImoveisCompra();
+}
 
+if(isset($_POST['listarImoveisAluguel'])){
+    $imob->listarImoveisAluguel();
+}
 
 
 
