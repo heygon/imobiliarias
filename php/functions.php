@@ -235,7 +235,8 @@ class Imob
         $dados['Video']           = $row['Video'];
         $dados['Mapa']            = $row['Mapa'];
         
-        return $dados;
+        //return $dados;
+        echo json_encode($dados);
 
     }
 
@@ -436,6 +437,11 @@ if(isset($_POST['listarImoveisAluguel'])){
 
 if(isset($_GET['corpoResultado'])){
     $imob->listarImoveis($_GET);
+}
+
+
+if(isset($_POST['detalhes'])){
+    $imob->detalhes($_POST['detalhes']);
 }
 
 
