@@ -25,7 +25,7 @@
               <img src="img/diogenes.png" style="width:250px;" />
             </div>
 
-              <form method="get" action="busca.php" class="form-group">
+              <!--form method="post" action="busca.php" class="form-group"-->
                 <div class="row">
                   <div class="col-md-4 col-sm-12 pl-0 campoBusca">
                     <label>Tipo de negócio</label>
@@ -105,20 +105,20 @@
 
                 <div class="col-md-12 col-sm-12 p-0 campoBuscaTdo mt-3">
                   <label class="col-12 pl-0">Palavra chave</label>    
-                  <input type="text" class="pl-0 form-control col-12 pl-2" name="chave" placeholder="Pesquisar por código ou palavra chave" value="<?php if(isset($_GET['chave'])){ echo $_GET['chave'];  } ?>">
+                  <input type="text" class="pl-0 form-control col-12 pl-2 chave" name="chave" placeholder="Pesquisar por código ou palavra chave">
                 </div>
 
                 <div class="row">
 
                   <div class="col-6 offset-3 btnBuscar">
                     <label>&nbsp;</label>
-                    <input type="submit" class="btn btn-pri col-12" value="Buscar imóvel"/>
+                    <div class="btn btn-pri col-12" >Buscar imóvel</div>
                   </div>
 
 
                 </div>
 
-              </form>
+              <!--/form-->
             </div>
           </div>
         </div>
@@ -174,34 +174,36 @@
             
 
 
-
-            
-
-            jQuery.ajax({
-              url: 'php/functions.php', 
-              type: 'GET',
-              data:
-                {
-                  corpoResultado: '',
-                  tipoNegocio : $('.tipoNegocio').val(),
-                  Cidade : $('.Cidade').val(),
-                  Preco : $('.Preco').val(),
-                  quarto : $('.quarto').val(),
-                  garagem : $('.garagem').val(),
-                  tipoImovel : $('.tipoImovel').val(),
-                }
-            })
-            .done(function(xhr) {
-              console.log(xhr);
-              jQuery('.recebeResultadodaBusca').html(xhr);
-            })
-            .fail(function() {
-              console.log('error');
+            jQuery('.btnBuscar').click(function(){
+              busca();
             });
 
-
+            function busca(){
+                jQuery.ajax({
+                  url: 'php/functions.php', 
+                  type: 'POST',
+                  data:
+                    {
+                      corpoResultado: '',
+                      tipoNegocio : $('.tipoNegocio').val(),
+                      Cidade : $('.Cidade').val(),
+                      Preco : $('.Preco').val(),
+                      quarto : $('.quarto').val(),
+                      garagem : $('.garagem').val(),
+                      tipoImovel : $('.tipoImovel').val(),
+                      chave : $('.chave').val(),
+                    }
+                })
+                .done(function(xhr) {
+                  console.log(xhr);
+                  jQuery('.recebeResultadodaBusca').html(xhr);
+                })
+                .fail(function() {
+                  console.log('error');
+                });
+            }
+            busca();
           });
-
     </script>
 
   </body>

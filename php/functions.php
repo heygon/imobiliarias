@@ -17,14 +17,14 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        $con = mysqli_connect('localhost','root','root','imobiliaria');
-        //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
+        //$con = mysqli_connect('localhost','root','root','imobiliaria');
+        $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
     }
     
     public function query($query){
-        return $this->con()->query($query);
+        return @$this->con()->query($query);
     }
 
     public function listarImoveis($busca){
@@ -89,37 +89,41 @@ class Imob
             }
         }
 
-        //[tipoNegocio] => -- [Cidade] => -- [Preco] => -- [quarto] => -- [garagem] => -- [tipoImovel]
+        $sqlP = $sql." Status = 1 ORDER BY rand() ";
+        $params = $busca['tipoNegocio'];
 
-        $sql .= " Status = 1 ORDER BY rand() LIMIT ".$p.",12 ";
+        if($p == 0){
+            $sql .= " Status = 1 ORDER BY rand() LIMIT 12 ";
+        }else{
+            $sql .= " Status = 1 ORDER BY rand() LIMIT ".$p.",12 ";
+        }
 
 
         //echo $sql;
 
-
-        $imob = $this->query($sql);
-
-        $this->corpoResultado($imob);
+        $this->corpoResultado($sql,$sqlP,$params);
         
     }
 
     public function listarImoveisCompra(){
 
-        $imob = $this->query("SELECT * FROM imovies WHERE VendaAluga = 1 AND Status = 1 ORDER BY rand() LIMIT 3 ");
-        $this->corpoResultado($imob);
+        $imob = "SELECT * FROM imovies WHERE VendaAluga = 1 AND Status = 1 ORDER BY rand() LIMIT 3 ";
+        $this->corpoResultado($imob,'','');
 
     }
 
     public function listarImoveisAluguel(){
 
-        $imob = $this->query("SELECT * FROM imovies WHERE VendaAluga = 2 AND Status = 1 ORDER BY rand() LIMIT 3");
-        $this->corpoResultado($imob);
+        $imob = "SELECT * FROM imovies WHERE VendaAluga = 2 AND Status = 1 ORDER BY rand() LIMIT 3";
+        $this->corpoResultado($imob,'','');
 
     }
 
 
-    public function corpoResultado($imob)
+    public function corpoResultado($sql,$sqlP,$params)
     {
+        $imob = $this->query($sql);
+
         if(!mysqli_num_rows($imob)){
 
             echo '<div class="col-md-12 col-sm-12 alert alert-warning text-center">Nenhum resultado encontrado</div>';
@@ -152,7 +156,7 @@ class Imob
                         <?php
                             if(!$row['PrecoVenda'] == ''){
                                 ?>
-                                    <h5>Aluguel: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
+                                    <h5>Valor: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
                                 <?php
                             }else{
                                 ?>
@@ -168,7 +172,7 @@ class Imob
                                     <div class="icones pt-2">
                                         <a href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
                                         <a href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
-                                        <a href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
+                                        <a href="https://twitter.com/intent/tweet?url=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
                                         <a href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
                                     </div>
                                 </div>
@@ -183,22 +187,39 @@ class Imob
             <?php
             }
             
-            $getTotal = $this->query("SELECT id FROM imovies");
-            $num = round(mysqli_num_rows($getTotal) / 12);
 
-            echo '<nav class=" col-6 offset-3 prepagination ">';
-            echo '<ul class="pagination">';
-                for ($i=0; $i < $num; $i++) { 
-                    echo '<li class="page-item  ';
-                    if(isset($_GET['p'])){
-                        if($_GET['p'] == $i ){
-                            echo 'active';
-                        }
-                    }
-                    echo ' "><a class="page-link" href="?p='.$i.'">'.$i.'</a></li>';
+            
+    
+            if($params == '--'){
+                $num = 137 / 12 ;
+            }else{
+                $getTotal = $this->query($sqlP);
+                $num = mysqli_num_rows($getTotal) / 12 ;
+            }
+            
+            //cho '<br/> Resultados -> '.$num.' tem busca -> '.$sqlP;
+
+            if($num > 1){
+                
+                if($num > 11){
+                    $num = 11; 
                 }
-            echo '</ul>';
-            echo '</nav>';
+
+                echo '<nav class=" col-6 offset-3 text-center prepagination ">';
+                echo '<ul class="pagination">';
+                    for ($i=0; $i < $num; $i++) { 
+                        echo '<li class="page-item  ';
+                        if(isset($_GET['p'])){
+                            if($_GET['p'] == $i ){
+                                echo 'active';
+                            }
+                        }
+                        echo ' "><a class="page-link" href="?p='.$i.'">'.$i.'</a></li>';
+                    }
+                echo '</ul>';
+                echo '</nav>';
+
+            }
             
         }
     }
@@ -221,6 +242,7 @@ class Imob
         $detalhes = $this->query("SELECT * FROM imovies WHERE id = '".$id."' ");
         $row = $detalhes->fetch_array();
 
+        $dados['id']              = $row['id'];
         $dados['TituloImovel']    = $row['TituloImovel'];
         $dados['Observacao']      = $row['Observacao'];
         $dados['PrecoVenda']      = $row['PrecoVenda'];
@@ -435,8 +457,9 @@ if(isset($_POST['listarImoveisAluguel'])){
     $imob->listarImoveisAluguel();
 }
 
-if(isset($_GET['corpoResultado'])){
-    $imob->listarImoveis($_GET);
+
+if(isset($_POST['corpoResultado'])){
+    $imob->listarImoveis($_POST);
 }
 
 

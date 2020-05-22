@@ -59,6 +59,23 @@
                   .carousel-indicators li.active img{
                     border:solid 2px #fff;
                   }
+
+                  .carousel-indicators::-webkit-scrollbar-track
+                  {
+                      -webkit-box-shadow: inset 0 0 1px transparent;
+                      background-color: transparent;
+                  }
+
+                  .carousel-indicators::-webkit-scrollbar
+                  {
+                      width: 1px;
+                      background-color: transparent;
+                  }
+
+                  .carousel-indicators::-webkit-scrollbar-thumb
+                  {
+                      background-color: transparent;
+                  }
                 </style>
 
                 <div class="carousel-inner"></div>
@@ -336,6 +353,8 @@
 
 
 
+          $('.TituloImovel').html(obj.TituloImovel);
+
           $('.recebePrecoVenda').html(obj.PrecoVenda);
           $('.recebeCodigoImovel').html(obj.CodigoImovel);
           $('.recebeCidade').html(obj.Cidade);
@@ -346,11 +365,10 @@
           $('.recebeAreaTotal').html(obj.AreaTotal);
           
 
-          
-          $('.compartilharFacebook').attr({ 'src':'https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+url[1] });
-          $('.compartilharWhats').attr({ 'src':'https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+url[1] });
-          $('.compartilharTwitter').attr({ 'src':'https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+url[1] });
-          $('.compartilharEmail').attr({ 'src':'mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+url[1] });
+          $('.compartilharFacebook').attr({ 'href' : 'https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
+          $('.compartilharWhats').attr({ 'href':'https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
+          $('.compartilharTwitter').attr({ 'href':'https://twitter.com/intent/tweet?url=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
+          $('.compartilharEmail').attr({ 'href':'mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
 
           $('.recebeObservacoes').html(obj.Observacao);
 
