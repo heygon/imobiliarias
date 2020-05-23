@@ -89,7 +89,7 @@ class Imob
 
         //[tipoNegocio] => -- [Cidade] => -- [Preco] => -- [quarto] => -- [garagem] => -- [tipoImovel]
 
-        $sql .= " Status = 1 ORDER BY rand() LIMIT ".$p.",12 ";
+        $sql .= " Status = 1 ORDER BY id LIMIT ".$p.",12 ";
 
 
         //echo $sql;
@@ -334,7 +334,8 @@ class Imob
                         Video,
                         Status,
                         VendaAluga,
-                        Mapa
+                        Mapa,
+                        PrecoLocacao
                     ) VALUES(
                         '".trim($xml[$i]->CodigoImovel)."',
                         '".trim($xml[$i]->TipoImovel)."',
@@ -365,7 +366,9 @@ class Imob
                         '".trim($xml[$i]->Video)."',
                         '1',
                         '". $vendaAluga ."',
-                        ''
+                        '',
+                        '".trim($xml[$i]->PrecoLocacao)."'
+                        
                     )
                 ");
             
