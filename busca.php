@@ -20,7 +20,7 @@
         <div class="col-sm-12 col-md-10">
           <div class="busca card">
             <div class="card-body">
-              
+
             <div class="imagemDiogenes" style=" float:right; position:relative; top:-70px; left:-60px; height:1px; width:1px; ">
               <img src="img/diogenes.png" style="width:250px;" />
             </div>
@@ -85,7 +85,7 @@
                   <div class="col-md-4 col-sm-12 mt-2 campoBusca2">
                     <label>Garagem</label>
                     <select name="garagem" class="form-control garagem">
-                      <option value="--">Selecione</option>  
+                      <option value="--">Selecione</option>
                       <option value="1" >Sim</option>
                       <option value="2" >Não</option>
                     </select>
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="col-md-12 col-sm-12 p-0 campoBuscaTdo mt-3">
-                  <label class="col-12 pl-0">Palavra chave</label>    
+                  <label class="col-12 pl-0">Palavra chave</label>
                   <input type="text" class="pl-0 form-control col-12 pl-2 chave" name="chave" placeholder="Pesquisar por código ou palavra chave">
                 </div>
 
@@ -123,7 +123,7 @@
           </div>
         </div>
         <div class="col-sm-0 col-md-1">&nbsp;</div>
-        
+
       </div>
       <!-- FIM DA CARD BODY ^ -->
       <!-- FIM DA CARD BODY | -->
@@ -151,7 +151,7 @@
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-  
+
           jQuery(document).ready(function(){
 
             var url = document.location.href;
@@ -163,15 +163,13 @@
 
               for (let u = 0; u < url.length; u++) {
                 var par = url[u].split('=');
-                
-                jQuery('.'+par[0]).val(par[1]);
-              }  
-            } catch (error) {
-              
-            }
-            
 
-            
+                jQuery('.'+par[0]).val(decodeURI(par[1]));
+              }
+            } catch (error) {
+
+            }
+
 
 
             jQuery('.btnBuscar').click(function(){
@@ -180,7 +178,7 @@
 
             function busca(){
                 jQuery.ajax({
-                  url: 'php/functions.php', 
+                  url: 'php/functions.php',
                   type: 'POST',
                   data:
                     {
@@ -197,6 +195,8 @@
                 .done(function(xhr) {
                   console.log(xhr);
                   jQuery('.recebeResultadodaBusca').html(xhr);
+
+                  window.history.pushState("object or string", "Site Imóveis", "busca.php?tipoNegocio="+$('.tipoNegocio').val()+"&Cidade="+$('.Cidade').val()+"&Preco="+$('.Preco').val()+"&quarto="+$('.quarto').val()+"&garagem="+$('.garagem').val()+"&tipoImovel="+$('.tipoImovel').val()+"&chave="+$('.chave').val());
                 })
                 .fail(function() {
                   console.log('error');

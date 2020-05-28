@@ -158,7 +158,9 @@
           
 
           <div class="row">
-            <iframe class="col recebeVideo" width="560" height="400" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="col recebeVideo" width="560" height="400" src="https://www.youtube.com/watch?v=DguHgiUg_v8&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <!--iframe class="col recebeVideo" width="560" height="400" src="https://www.youtube.com/watch?v=DguHgiUg_v8&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
           </div>
 
           
@@ -355,7 +357,16 @@
 
           $('.TituloImovel').html(obj.TituloImovel);
 
-          $('.recebePrecoVenda').html(obj.PrecoVenda);
+          if(obj.PrecoVenda == ''){
+            if(obj.PrecoLocacao == ''){
+              $('.recebePrecoVenda').html('Não informado');
+            }else{
+              $('.recebePrecoVenda').html(obj.PrecoLocacao);
+            }
+          }else{
+            $('.recebePrecoVenda').html(obj.PrecoVenda);
+          }
+
           $('.recebeCodigoImovel').html(obj.CodigoImovel);
           $('.recebeCidade').html(obj.Cidade);
           $('.recebeUF').html(obj.UF);
@@ -375,7 +386,20 @@
           if(obj.Video == '' || obj.Video == undefined){
             $('.recebeVideo').hide();
           }else{
-            $('.recebeVideo').attr({ 'src' : obj.Video });
+
+            console.log(obj.Video);
+            var video = obj.Video.split('=');
+            if(video.length >= 2){
+              video = video[1].split('&');
+              video = video[0];
+              video = 'https://www.youtube.com/embed/'+video;
+
+            }else{
+              video = video[0];
+            }
+
+
+            $('.recebeVideo').attr({ 'src' : video });
           }
           
           $('.corpoEmail').val('Olá, eu gostaria de obter mais informações sobre este imóvel Código : ' + obj.CodigoImovel + ' - ' + obj.TituloImovel + ' - ' + obj.Cidade + ' - ' + obj.UF);

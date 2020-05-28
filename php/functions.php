@@ -17,8 +17,8 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        //$con = mysqli_connect('localhost','root','root','imobiliaria');
-        $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
+        $con = mysqli_connect('localhost','root','root','imobiliaria');
+        //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
     }
@@ -89,13 +89,13 @@ class Imob
             }
         }
 
-        $sqlP = $sql." Status = 1 ORDER BY rand() ";
+        $sqlP = $sql." Status = 1 ";
         $params = $busca['tipoNegocio'];
 
         if($p == 0){
-            $sql .= " Status = 1 ORDER BY rand() LIMIT 12 ";
+            $sql .= " Status = 1 GROUP BY id LIMIT 12 ";
         }else{
-            $sql .= " Status = 1 ORDER BY rand() LIMIT ".$p.",12 ";
+            $sql .= " Status = 1 GROUP BY id LIMIT ".$p.",12 ";
         }
 
 
@@ -159,9 +159,15 @@ class Imob
                                     <h5>Valor: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
                                 <?php
                             }else{
-                                ?>
-                                    <h5>Não informado</h5>
-                                <?php
+                                if($row['PrecoLocacao'] == ''){
+                                    ?>
+                                        <h5>Não informado</h5>
+                                    <?php
+                                }else{
+                                    ?>
+                                        <h5>Aluguel: R$ <?php echo number_format(intval($row['PrecoLocacao']),2,",","."); ?></h5>
+                                    <?php
+                                }
                             }
                         ?>
                         </div>
@@ -194,7 +200,7 @@ class Imob
                 $num = 137 / 12 ;
             }else{
                 $getTotal = $this->query($sqlP);
-                $num = mysqli_num_rows($getTotal) / 12 ;
+                $num = @mysqli_num_rows($getTotal) / 12 ;
             }
             
             //cho '<br/> Resultados -> '.$num.' tem busca -> '.$sqlP;
@@ -246,6 +252,7 @@ class Imob
         $dados['TituloImovel']    = $row['TituloImovel'];
         $dados['Observacao']      = $row['Observacao'];
         $dados['PrecoVenda']      = $row['PrecoVenda'];
+        $dados['PrecoLocacao']    = $row['PrecoLocacao'];
         $dados['TipoImovel']      = $row['TipoImovel'];
         $dados['SubTipoImovel']   = $row['SubTipoImovel'];
         $dados['AreaTotal']       = $row['AreaTotal'];
@@ -265,6 +272,7 @@ class Imob
 
     public function enviarContato($nomeEmail,$telefoneEmail,$emailEmail,$corpoEmail)
     {
+        $to = 'gshlucas6@gmail.com';
         // subject
         $subject = 'Contato enviado pelo site';
 
@@ -302,7 +310,7 @@ class Imob
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
         // Additional headers
-        $headers .= 'To: gshlucas6@gmail.com' . "\r\n";
+        $headers .= 'To: '.$to. "\r\n";
         $headers .= 'From: Sistema <noreply@imobiliariadiogenes.com.br>' . "\r\n";
 
         // Mail it
@@ -311,6 +319,12 @@ class Imob
 
  
     public function imoveis() {
+        
+        $this->query("TRUNCATE TABLE Fotos ");
+        $this->query("TRUNCATE TABLE imovies ");
+        
+        
+        
         //$xml = simplexml_load_file("imob.xml");
         $xml = simplexml_load_file("https://www.okeimoveis.com.br/gestao/webservices/IntegracaoImoveisOke.webservice.php?ccu=2039");
 
@@ -327,6 +341,74 @@ class Imob
             if(!mysqli_num_rows($confere)){
 
                 $vendaAluga = (trim($xml[$i]->PrecoVenda) == '' || trim($xml[$i]->PrecoVenda) == null ) ? 2 : 1 ;
+                
+            
+                echo "INSERT INTO imovies (
+                    CodigoImovel,
+                    TipoImovel,
+                    SubTipoImovel,
+                    TituloImovel,
+                    UF,
+                    Modelo,
+                    Endereco,
+                    VisualizarMapa,
+                    DivulgarEndereco,
+                    Cidade,
+                    Bairro,
+                    Numero,
+                    Complemento,
+                    CEP,
+                    PrecoVenda,
+                    PrecoLocacao,
+                    PrecoCondominio,
+                    ValorIPTU,
+                    UnidadeMetrica,
+                    AreaUtil,
+                    AreaTotal,
+                    QtdDormitorios,
+                    QtdSuites,
+                    QtdBanheiros,
+                    QtdVagas,
+                    Observacao,
+                    Caracteristicas,
+                    Video,
+                    Status,
+                    VendaAluga,
+                    Mapa
+                ) VALUES(
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->CodigoImovel))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->TipoImovel))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->SubTipoImovel))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->TituloImovel))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->UF))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Modelo))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Endereco))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->VisualizarMapa))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->DivulgarEndereco))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Cidade))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Bairro))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Numero))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Complemento))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->CEP))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoVenda))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoLocacao))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoCondominio))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->ValorIPTU))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->UnidadeMetrica))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->AreaUtil))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->AreaTotal))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdDormitorios))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdSuites))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdBanheiros))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdVagas))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Observacao))."',
+                    '".trim(preg_replace("/'/s"," ",$xml[$i]->Caracteristicas))."',
+                    '".trim(@$xml[$i]->Videos->Video->Url)."',
+                    '1',
+                    '". $vendaAluga ."',
+                    ''
+                )<br/>";
+
 
                 $this->query("
                     INSERT INTO imovies (
@@ -345,6 +427,7 @@ class Imob
                         Complemento,
                         CEP,
                         PrecoVenda,
+                        PrecoLocacao,
                         PrecoCondominio,
                         ValorIPTU,
                         UnidadeMetrica,
@@ -361,38 +444,41 @@ class Imob
                         VendaAluga,
                         Mapa
                     ) VALUES(
-                        '".trim($xml[$i]->CodigoImovel)."',
-                        '".trim($xml[$i]->TipoImovel)."',
-                        '".trim($xml[$i]->SubTipoImovel)."',
-                        '".trim($xml[$i]->TituloImovel)."',
-                        '".trim($xml[$i]->UF)."',
-                        '".trim($xml[$i]->Modelo)."',
-                        '".trim($xml[$i]->Endereco)."',
-                        '".trim($xml[$i]->VisualizarMapa)."',
-                        '".trim($xml[$i]->DivulgarEndereco)."',
-                        '".trim($xml[$i]->Cidade)."',
-                        '".trim($xml[$i]->Bairro)."',
-                        '".trim($xml[$i]->Numero)."',
-                        '".trim($xml[$i]->Complemento)."',
-                        '".trim($xml[$i]->CEP)."',
-                        '".trim($xml[$i]->PrecoVenda)."',
-                        '".trim($xml[$i]->PrecoCondominio)."',
-                        '".trim($xml[$i]->ValorIPTU)."',
-                        '".trim($xml[$i]->UnidadeMetrica)."',
-                        '".trim($xml[$i]->AreaUtil)."',
-                        '".trim($xml[$i]->AreaTotal)."',
-                        '".trim($xml[$i]->QtdDormitorios)."',
-                        '".trim($xml[$i]->QtdSuites)."',
-                        '".trim($xml[$i]->QtdBanheiros)."',
-                        '".trim($xml[$i]->QtdVagas)."',
-                        '".trim($xml[$i]->Observacao)."',
-                        '".trim($xml[$i]->Caracteristicas)."',
-                        '".trim($xml[$i]->Video)."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->CodigoImovel))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->TipoImovel))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->SubTipoImovel))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->TituloImovel))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->UF))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Modelo))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Endereco))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->VisualizarMapa))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->DivulgarEndereco))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Cidade))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Bairro))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Numero))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Complemento))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->CEP))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoVenda))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoLocacao))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoCondominio))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->ValorIPTU))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->UnidadeMetrica))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->AreaUtil))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->AreaTotal))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdDormitorios))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdSuites))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdBanheiros))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdVagas))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Observacao))."',
+                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Caracteristicas))."',
+                        '".trim(@$xml[$i]->Videos->Video->Url)."',
                         '1',
                         '". $vendaAluga ."',
                         ''
                     )
                 ");
+                
+                
             
 
                 // Recupera o último ID de anúncio inserido
@@ -418,6 +504,8 @@ class Imob
                         )
                     ");
                 }
+                
+                
             }
             
         }
@@ -438,6 +526,7 @@ class Imob
     
 
 }
+
 
 $imob = new Imob();
 
