@@ -21,6 +21,49 @@
     <meta property="og:url" content="https://imobiliariadiogenes.com.br"/>
     <meta property="og:site_name" content="Diógenes Imóveis"/>
 
+
+    <style>
+      .carousel-indicators{
+        width:80%;
+        margin-left:10%;
+        bottom:0px;
+        height:70px;
+        overflow:auto;
+      }
+      .carousel-indicators::-webkit-scrollbar-track
+      {
+          -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+          background-color: transparent;
+      }
+
+      .carousel-indicators::-webkit-scrollbar
+      {
+          width: 1px;
+          background-color: transparent;
+      }
+
+      .carousel-indicators::-webkit-scrollbar-thumb
+      {
+          background-color: transparent;
+      }
+
+
+      .carousel-indicators{
+        bottom:40px
+      }
+      .carousel-indicators li{
+        text-indent:0px;
+        margin-right:20px;
+      }
+      .carousel-indicators li.active{
+        opacity:1;
+      }
+      .carousel-indicators li.active img{
+        border:solid 2px #fff;
+      }
+      
+    </style>
+
   </head>
   <body>
     <div class="container-fluid">
@@ -48,7 +91,7 @@
               <!-- //////GALERIA////// -->
               <!-- /////////////////// -->
               <div id="galeria" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators" style="width:80%; margin-left:10%; bottom:0px; height:70px; overflow:auto">
+                <ol class="carousel-indicators">
                   
                   <?php
                     $in = 0;
@@ -63,21 +106,7 @@
                   ?>
                 </ol>
 
-                <style>
-                  .carousel-indicators{
-                    bottom:40px
-                  }
-                  .carousel-indicators li{
-                    text-indent:0px;
-                    margin-right:20px;
-                  }
-                  .carousel-indicators li.active{
-                    opacity:1;
-                  }
-                  .carousel-indicators li.active img{
-                    border:solid 2px #fff;
-                  }
-                </style>
+    
 
                 <div class="carousel-inner">
                   
@@ -120,7 +149,7 @@
                     <li>Código do imóvel : <?php echo $imob->detalhes($_GET['i'])['CodigoImovel']; ?></li>
                     <li><?php echo $imob->detalhes($_GET['i'])['Cidade'].' - '.$imob->detalhes($_GET['i'])['UF']; ?></li>
                     <?php if(!$imob->detalhes($_GET['i'])['QtdDormitorios'] == ''){ echo '<li>'.$imob->detalhes($_GET['i'])['QtdDormitorios'].' quartos</li>'; }; ?> 
-                    <?php if(!$imob->detalhes($_GET['i'])['AreaUtil'] == ''){ echo '<li>Área útil: '.$imob->detalhes($_GET['i'])['AreaUtil'].'m<sup>2</sup></li>'; } ?>
+                    <?php if(!$imob->detalhes($_GET['i'])['AreaUtil'] == ''){ echo '<li>Área privativa: '.$imob->detalhes($_GET['i'])['AreaUtil'].'m<sup>2</sup></li>'; } ?>
                     <li>Área total: <?php echo $imob->detalhes($_GET['i'])['AreaTotal']; ?> m<sup>2</sup></li>
                   </ul>
                 </div>
@@ -333,8 +362,24 @@
         });
 
 
+        $('.carousel-indicators li img').click(function(){
+          console.log($(this).attr('src'));
+          $('#ImageFull').fadeIn();
+        });
+
+        $('.closeImageFull').click(function(){
+          $('#ImageFull').hide();
+        });
+
       });
     </script>
+
+
+    <div id="ImageFull" style="display:none; position:fixed; top:0px; left:0px; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:20">
+      <img src="img/times.svg" class="closeImageFull" style="position:fixed; top:16px; right:16px; color:#fff; height:35px; " />
+
+      <img src="img/card.jpg" class="recebeNovaImagem" style="position:fixed; top:30px; width:80%; margin-left:10%; " />
+    </div>
 
   </body>
 </html>

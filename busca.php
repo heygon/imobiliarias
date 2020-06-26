@@ -110,7 +110,7 @@
 
                 <div class="col-md-12 col-sm-12 p-0 campoBuscaTdo mt-3">
                   <label class="col-12 pl-0">Palavra chave</label>    
-                  <input type="text" class="pl-0 form-control col-12 pl-2" name="chave" placeholder="Pesquisar por código ou palavra chave" value="<?php if(isset($_GET['chave'])){ echo $_GET['chave'];  } ?>">
+                  <input type="text" class="pl-0 form-control col-12 pl-2" name="chave" placeholder="Pesquisar por código ou palavra chave" value="<?php if(isset($_GET['chave'])){ echo preg_replace('/\+/i',' ', $_GET['chave']);  } ?>">
                 </div>
 
                 <div class="row">

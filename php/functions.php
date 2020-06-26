@@ -10,6 +10,8 @@ setlocale(LC_MONETARY, 'pt-br');
 
 
 
+
+
 class Imob
 {
     
@@ -17,7 +19,7 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        $con = mysqli_connect('localhost','root','root','imobiliaria');
+        $con = mysqli_connect('localhost','heygon','4595995ab','imobiliaria');
         //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
@@ -89,7 +91,7 @@ class Imob
 
         //[tipoNegocio] => -- [Cidade] => -- [Preco] => -- [quarto] => -- [garagem] => -- [tipoImovel]
 
-        $sql .= " Status = 1 ORDER BY id LIMIT ".$p.",12 ";
+        $sql .= " Status = 1 ORDER BY PrecoVenda,PrecoLocacao LIMIT ".$p.",12 ";
 
 
         //echo $sql;
@@ -292,9 +294,9 @@ class Imob
         echo '<pre>';
 
         $xml = $xml->Imoveis->Imovel;
-        //print_r($xml[1]);
+        print_r($xml[1]);
 
-        
+        /*
         for ($i=0; $i < count($xml) ; $i++) { 
 
 
@@ -366,7 +368,7 @@ class Imob
                         '".trim($xml[$i]->Video)."',
                         '1',
                         '". $vendaAluga ."',
-                        '',
+                        '<iframe width="300" height="170" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='.$xml[$i]->Latitude.','+.$xml[$i]->Longitude.+'&hl=es&z=14&amp;output=embed"></iframe>',
                         '".trim($xml[$i]->PrecoLocacao)."'
                         
                     )
@@ -399,6 +401,7 @@ class Imob
             }
             
         }
+        */
         
         echo '</pre>';
 
@@ -419,7 +422,9 @@ class Imob
 
 $imob = new Imob();
 
-//$imob->imoveis();
+if(isset($_GET['xml'])){
+    $imob->imoveis();
+}
 //$imob->json();
 
 
