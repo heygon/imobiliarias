@@ -1,8 +1,3 @@
-<?php
-  require 'php/functions.php';
-?>
-
-
 <!doctype html>
 <html lang="pt-BR">
   <head>
@@ -80,7 +75,7 @@
       <div class="card text-center">
         <div class="primecard card-header">
           <h3>
-            <strong><?php echo $imob->detalhes($_GET['i'])['TituloImovel'] ?></strong>
+            <strong class="TituloImovel"></strong>
           </h3>
         </div>  
 
@@ -91,40 +86,42 @@
               <!-- //////GALERIA////// -->
               <!-- /////////////////// -->
               <div id="galeria" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  
-                  <?php
-                    $in = 0;
-                    for ($i=0; $i < count($imob->detalhes($_GET['i'])['Galeria']) ; $i++) { 
-                    ?>
-                      <li data-target="#galeria" data-slide-to="<?php echo $i; ?>" class="<?php if($in == 0){ echo 'active'; } ?>">
-                        <img src="<?php echo $imob->detalhes($_GET['i'])['Galeria'][$i]['URL']; ?>" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border">
-                      </li>
-                    <?php
-                    $in = 1;
-                    }
-                  ?>
-                </ol>
+                <ol class="carousel-indicators" style="width:80%; margin-left:10%; bottom:0px; height:70px; overflow:auto"></ol>
 
-    
+                <style>
+                  .carousel-indicators{
+                    bottom:40px
+                  }
+                  .carousel-indicators li{
+                    text-indent:0px;
+                    margin-right:20px;
+                  }
+                  .carousel-indicators li.active{
+                    opacity:1;
+                  }
+                  .carousel-indicators li.active img{
+                    border:solid 2px #fff;
+                  }
 
-                <div class="carousel-inner">
-                  
-                  <?php
-                    $in = 0;
-                    for ($i=0; $i < count($imob->detalhes($_GET['i'])['Galeria']) ; $i++) { 
-                    ?>
-                    
-                      <div class="carousel-item <?php if($in == 0){ echo 'active'; } ?>  ">
-                        <img src="<?php echo $imob->detalhes($_GET['i'])['Galeria'][$i]['URL']; ?>" style="width:100%">
-                        <div class="carousel-caption d-none d-md-block"></div>
-                      </div>
+                  .carousel-indicators::-webkit-scrollbar-track
+                  {
+                      -webkit-box-shadow: inset 0 0 1px transparent;
+                      background-color: transparent;
+                  }
 
-                    <?php
-                    $in = 1;
-                    }
-                  ?>
-                </div>
+                  .carousel-indicators::-webkit-scrollbar
+                  {
+                      width: 1px;
+                      background-color: transparent;
+                  }
+
+                  .carousel-indicators::-webkit-scrollbar-thumb
+                  {
+                      background-color: transparent;
+                  }
+                </style>
+
+                <div class="carousel-inner"></div>
                 <a class="carousel-control-prev" href="#galeria" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
@@ -142,15 +139,15 @@
             <div class="col-lg-4 col-sm-12">
               <div class="card">
                 <div class="card-header sub">
-                  <strong>Valor do imóvel - R$ <?php echo number_format(intval($imob->detalhes($_GET['i'])['PrecoVenda']),2,",","."); ?></strong>
+                  <strong>Valor do imóvel - R$ <span class="recebePrecoVenda"></span> </strong>
                 </div>
                 <div class="card-body text-left">
                   <ul>
-                    <li>Código do imóvel : <?php echo $imob->detalhes($_GET['i'])['CodigoImovel']; ?></li>
-                    <li><?php echo $imob->detalhes($_GET['i'])['Cidade'].' - '.$imob->detalhes($_GET['i'])['UF']; ?></li>
-                    <?php if(!$imob->detalhes($_GET['i'])['QtdDormitorios'] == ''){ echo '<li>'.$imob->detalhes($_GET['i'])['QtdDormitorios'].' quartos</li>'; }; ?> 
-                    <?php if(!$imob->detalhes($_GET['i'])['AreaUtil'] == ''){ echo '<li>Área privativa: '.$imob->detalhes($_GET['i'])['AreaUtil'].'m<sup>2</sup></li>'; } ?>
-                    <li>Área total: <?php echo $imob->detalhes($_GET['i'])['AreaTotal']; ?> m<sup>2</sup></li>
+                    <li>Código do imóvel : <span class="recebeCodigoImovel"></span> </li>
+                    <li> <span class="recebeCidade"></span> - <span class="recebeUF"></span></li>
+                    <li><span class="recebeDormitorios"></span></li>
+                    <li><span class="recebeAreaUtil"></span></li>
+                    <li>Área total: <span class="recebeAreaTotal"></span> m<sup>2</sup></li>
                   </ul>
                 </div>
               </div>
@@ -161,10 +158,10 @@
                 </div>
                 <div class="icones card-body">
                   <div class="row">
-                    <a class="col-3" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
-                    <a class="col-3" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
-                    <a class="col-3" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
-                    <a class="col-3" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $_GET['i']; ?>" target="_blank"><img class="icons" src="img/cemail.png"></a>
+                    <a class="col-3 compartilharFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
+                    <a class="col-3 compartilharWhats" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
+                    <a class="col-3  compartilharTwitter" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
+                    <a class="col-3  compartilharEmail" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=" target="_blank"><img class="icons" src="img/cemail.png"></a>
                   </div>
                 </div>
               </div>
@@ -194,9 +191,7 @@
                 <div class="card-header sub">
                  <strong>Informações completas do imóvel</strong>
                 </div>
-                <div class="card-body">
-                  <?php echo $imob->detalhes($_GET['i'])['Observacao']; ?>
-                </div> 
+                <div class="card-body recebeObservacoes"></div> 
               </div>  
               
             </div>
@@ -204,26 +199,25 @@
           
           </br>
           
-          <?php
-            if(!$imob->detalhes($_GET['i'])['Video'] == ''){
-              ?>
-              <div class="row">
-                <iframe class="col" width="560" height="400" src="<?php echo $imob->detalhes($_GET['i'])['Video']; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <?php
-            }
-          ?>
+
+          <div class="row">
+            <iframe class="col recebeVideo" width="560" height="400" src="https://www.youtube.com/watch?v=DguHgiUg_v8&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <!--iframe class="col recebeVideo" width="560" height="400" src="https://www.youtube.com/watch?v=DguHgiUg_v8&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
+          </div>
+
+          
           
 
           </br>
           <?php
-            if(!$imob->detalhes($_GET['i'])['Mapa'] == ''){
+            /* if(!$imob->detalhes($_GET['i'])['Mapa'] == ''){
               ?>
               <div class="row">
                 <iframe class="col" src="<?php echo $imob->detalhes($_GET['i'])['Mapa']; ?>" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
               </div>
               <?php
-            }
+            } */
           ?>
           
           <div class="col-12">&nbsp;</div>
@@ -248,25 +242,25 @@
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <input class="form-control nomeEmail" type="text" placeholder="Nome" name="nome" id="nome">
+                  <input class="form-control nomeEmail" type="text" placeholder="Nome" name="nome" id="nomeEmail">
                 </div>
 
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <input class="form-control telefoneEmail" type="text" placeholder="Telefone" name="Telefone" id="nome">
+                  <input class="form-control telefoneEmail" type="text" placeholder="Telefone" name="Telefone" id="telefoneEmail">
                 </div>
 
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <input class="form-control emailEmail" type="text" placeholder="E-mail" name="Email" id="nome">
+                  <input class="form-control emailEmail" type="text" placeholder="E-mail" name="Email" id="emailEmail">
                 </div>
                 
                 <div class="col-12">&nbsp;</div>
 
                 <div class="col-12">
-                  <textarea class="form-control corpoEmail" rows="7">Olá, eu gostaria de obter mais informações sobre este imóvel Código : <?php echo $imob->detalhes($_GET['i'])['CodigoImovel'].' - '.$imob->detalhes($_GET['i'])['TituloImovel'].' - '.$imob->detalhes($_GET['i'])['Cidade'].' - '.$imob->detalhes($_GET['i'])['UF']; ?></textarea>
+                  <textarea class="form-control corpoEmail" rows="7"></textarea>
                 </div>
 
                 <div class="col-12">&nbsp;</div>
@@ -299,20 +293,20 @@
 
 
     <script>
-      $(document).ready(function(){
+      jQuery(document).ready(function(){
 
         
-        $('.btnEnviarContato').click(function(){
-          $('.btnEnviarContato').hide().before('<div class=" load col-12 center-align ">Enviado...</div>');
+        jQuery('.btnEnviarContato').click(function(){
+          jQuery('.btnEnviarContato').hide().before('<div class=" load col-12 center-align ">Enviado...</div>');
 
-          var nomeEmail = $('.nomeEmail').val();
-          var telefoneEmail = $('.telefoneEmail').val();
-          var emailEmail = $('.emailEmail').val();
-          var corpoEmail = $('.corpoEmail').val();
+          var nomeEmail = jQuery('.nomeEmail').val();
+          var telefoneEmail = jQuery('.telefoneEmail').val();
+          var emailEmail = jQuery('.emailEmail').val();
+          var corpoEmail = jQuery('.corpoEmail').val();
 
 
 
-          $.ajax({
+          jQuery.ajax({
             url: 'php/functions.php',
             type: 'POST',
             data:
@@ -328,20 +322,20 @@
             console.log(xhr);
             if(xhr.resp = 's'){
           
-              $('.load').remove();
-              $('.btnEnviarContato').before('<div class=" load alert alert-success col-12 text-center ">Sucesso</div>');
+              jQuery('.load').remove();
+              jQuery('.btnEnviarContato').before('<div class=" load alert alert-success col-12 text-center ">Sucesso</div>');
               setTimeout(function(){
-                $('.load').remove();
-                $('.btnEnviarContato').fadeIn();
+                jQuery('.load').remove();
+                jQuery('.btnEnviarContato').fadeIn();
               },3000);
           
             }else{
           
-              $('.load').remove();
-              $('.btnEnviarContato').before('<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>');
+              jQuery('.load').remove();
+              jQuery('.btnEnviarContato').before('<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>');
               setTimeout(function(){
-                $('.load').remove();
-                $('.btnEnviarContato').fadeIn();
+                jQuery('.load').remove();
+                jQuery('.btnEnviarContato').fadeIn();
               },3000);
           
             }
@@ -349,11 +343,11 @@
           })
           .fail(function() {
             
-            $('.load').remove();
-            $('.btnEnviarContato').before('<div class=" load alert alert-success col-12 text-center ">Erro ao enviar</div>');
+            jQuery('.load').remove();
+            jQuery('.btnEnviarContato').before('<div class=" load alert alert-success col-12 text-center ">Erro ao enviar</div>');
             setTimeout(function(){
-              $('.load').remove();
-              $('.btnEnviarContato').fadeIn();
+              jQuery('.load').remove();
+              jQuery('.btnEnviarContato').fadeIn();
             },3000);
 
           });
@@ -362,14 +356,109 @@
         });
 
 
-        $('.carousel-indicators li img').click(function(){
-          console.log($(this).attr('src'));
-          $('#ImageFull').fadeIn();
+        var url = document.location.href;
+
+        try {
+          url = url.split('=');  
+        } catch (error) {
+          
+        }
+
+
+        jQuery.ajax({
+          url: 'php/functions.php', 
+          type: 'POST',
+          data:
+            {
+              detalhes: url[1],
+            }
+        })
+        .done(function(xhr) {
+          console.log(xhr);
+
+          var obj = JSON.parse(xhr);
+
+
+          var tumb = '';
+          var gale = '';
+          for (var i = 0; i < obj.Galeria.length; i++) {
+            
+            tumb += '<li data-target="#galeria" data-slide-to="'+i+'" class="'+ ((i == 0)? 'active' : '') +'">';
+            tumb += '<img src="'+ obj.Galeria[i].URL+'" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border">';
+            tumb += '</li>';
+
+            gale += '<div class="carousel-item '+ ((i == 0)? 'active' : '') +'  ">';
+            gale += '<img src="'+ obj.Galeria[i].URL+'" style="width:100%">';
+            gale += '<div class="carousel-caption d-none d-md-block"></div>';
+            gale += '</div>';
+          };
+
+          $('.carousel-indicators').html(tumb);
+          $('.carousel-inner').html(gale);
+
+
+
+          $('.TituloImovel').html(obj.TituloImovel);
+
+          if(obj.PrecoVenda == ''){
+            if(obj.PrecoLocacao == ''){
+              $('.recebePrecoVenda').html('Não informado');
+            }else{
+              $('.recebePrecoVenda').html(obj.PrecoLocacao);
+            }
+          }else{
+            $('.recebePrecoVenda').html(obj.PrecoVenda);
+          }
+
+          $('.recebeCodigoImovel').html(obj.CodigoImovel);
+          $('.recebeCidade').html(obj.Cidade);
+          $('.recebeUF').html(obj.UF);
+
+          $('.recebeDormitorios').html( ((obj.Dormitorios == '' || obj.Dormitorios == undefined) ? '' : 'Quartos : '+obj.Dormitorios ));
+          $('.recebeAreaUtil').html('Área útil : '+obj.AreaUtil+' m<sup>2</sup>');
+          $('.recebeAreaTotal').html(obj.AreaTotal);
+          
+
+          $('.compartilharFacebook').attr({ 'href' : 'https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
+          $('.compartilharWhats').attr({ 'href':'https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
+          $('.compartilharTwitter').attr({ 'href':'https://twitter.com/intent/tweet?url=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
+          $('.compartilharEmail').attr({ 'href':'mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
+
+          $('.recebeObservacoes').html(obj.Observacao);
+
+          if(obj.Video == '' || obj.Video == undefined){
+            $('.recebeVideo').hide();
+          }else{
+
+            console.log(obj.Video);
+            var video = obj.Video.split('=');
+            if(video.length >= 2){
+              video = video[1].split('&');
+              video = video[0];
+              video = 'https://www.youtube.com/embed/'+video;
+
+            }else{
+              video = video[0];
+            }
+
+
+            $('.recebeVideo').attr({ 'src' : video });
+          }
+          
+          $('.corpoEmail').val('Olá, eu gostaria de obter mais informações sobre este imóvel Código : ' + obj.CodigoImovel + ' - ' + obj.TituloImovel + ' - ' + obj.Cidade + ' - ' + obj.UF);
+          
+          
+          
+
+                      
+
+
+          
+        })
+        .fail(function() {
+          console.log('error');
         });
 
-        $('.closeImageFull').click(function(){
-          $('#ImageFull').hide();
-        });
 
       });
     </script>
