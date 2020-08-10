@@ -17,6 +17,33 @@
     <meta property="og:site_name" content="Diógenes Imóveis"/>
 
 
+
+    <style>
+      #imagemCarrousel{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        z-index:999;
+      }
+      #imagemCarrousel strong{
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        color:#fff;
+      }
+      #imagemCarrousel #recebeImagemGrande{
+        height: 90%;
+        width: 90%;
+        margin-left:5%;
+        margin-top:3%;
+        overflow: hidden;
+      }
+    </style>
+
     <style>
       .carousel-indicators{
         width:80%;
@@ -142,13 +169,7 @@
                   <strong>Valor do imóvel - R$ <span class="recebePrecoVenda"></span> </strong>
                 </div>
                 <div class="card-body text-left">
-                  <ul>
-                    <li>Código do imóvel : <span class="recebeCodigoImovel"></span> </li>
-                    <li> <span class="recebeCidade"></span> - <span class="recebeUF"></span></li>
-                    <li><span class="recebeDormitorios"></span></li>
-                    <li><span class="recebeAreaUtil"></span></li>
-                    <li>Área total: <span class="recebeAreaTotal"></span> m<sup>2</sup></li>
-                  </ul>
+                  <ul class="recebeInfosImoveis"></ul>
                 </div>
               </div>
               <br>
@@ -285,11 +306,18 @@
      <!-- fim da card -->
      </div>
 
+     <div id="imagemCarrousel">
+       <strong class="fecharImgDestaque">Fechar</strong>
+       <div id="recebeImagemGrande"></div>
+     </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript" src="js/jquery.js" ></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
 
 
     <script>
@@ -319,7 +347,7 @@
               }
           })
           .done(function(xhr) {
-            console.log(xhr);
+            //console.log(xhr);
             if(xhr.resp = 's'){
           
               jQuery('.load').remove();
@@ -374,7 +402,7 @@
             }
         })
         .done(function(xhr) {
-          console.log(xhr);
+          //console.log(xhr);
 
           var obj = JSON.parse(xhr);
 
@@ -397,6 +425,29 @@
           $('.carousel-inner').html(gale);
 
 
+          jQuery('.carousel-indicators li img').on('click', function () {
+            var img = $(this).attr('src');
+            console.log(img);
+
+            jQuery('#imagemCarrousel').fadeIn();
+            jQuery('#recebeImagemGrande').html('<img src="'+img+'" style="width:100%"/>');
+            
+          });
+          
+          jQuery('.carousel-item img').on('click', function () {
+            var img = $(this).attr('src');
+            console.log(img);
+
+            $('#imagemCarrousel').fadeIn();
+            $('#recebeImagemGrande').html('<img src="'+img+'" style="width:100%"/>');
+            
+          });
+
+          $('.fecharImgDestaque').click(function(){
+            $('#imagemCarrousel').hide();
+          });
+
+
 
           $('.TituloImovel').html(obj.TituloImovel);
 
@@ -410,15 +461,21 @@
             $('.recebePrecoVenda').html(obj.PrecoVenda);
           }
 
-          $('.recebeCodigoImovel').html(obj.CodigoImovel);
-          $('.recebeCidade').html(obj.Cidade);
-          $('.recebeUF').html(obj.UF);
-
-          $('.recebeDormitorios').html( ((obj.Dormitorios == '' || obj.Dormitorios == undefined) ? '' : 'Quartos : '+obj.Dormitorios ));
-          $('.recebeAreaUtil').html('Área útil : '+obj.AreaUtil+' m<sup>2</sup>');
-          $('.recebeAreaTotal').html(obj.AreaTotal);
           
+          apresentaCampo('Código do imóvel', obj.CodigoImovel);
+          apresentaCampo('Cidade', obj.Cidade);
+          apresentaCampo('UF', obj.UF);
+          apresentaCampo('Dormitórios', obj.Dormitorios);
+          apresentaCampo('Suites', obj.QtdSuites);
+          apresentaCampo('Área privada m<sup>2</sup>', obj.AreaUtil);
+          apresentaCampo('Área total m<sup>2</sup>', obj.AreaTotal);
 
+          function apresentaCampo(text, campo){
+            if(campo == '' || campo == null || campo == undefined || campo == 'null' || campo == 'undefined'){}else{
+              $('.recebeInfosImoveis').append('<li>'+text+' : '+campo+' </li>');
+            }
+          }
+          
           $('.compartilharFacebook').attr({ 'href' : 'https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
           $('.compartilharWhats').attr({ 'href':'https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
           $('.compartilharTwitter').attr({ 'href':'https://twitter.com/intent/tweet?url=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='+obj.id });
@@ -430,7 +487,7 @@
             $('.recebeVideo').hide();
           }else{
 
-            console.log(obj.Video);
+            //console.log(obj.Video);
             var video = obj.Video.split('=');
             if(video.length >= 2){
               video = video[1].split('&');
@@ -447,16 +504,9 @@
           
           $('.corpoEmail').val('Olá, eu gostaria de obter mais informações sobre este imóvel Código : ' + obj.CodigoImovel + ' - ' + obj.TituloImovel + ' - ' + obj.Cidade + ' - ' + obj.UF);
           
-          
-          
-
-                      
-
-
-          
         })
         .fail(function() {
-          console.log('error');
+          //console.log('error');
         });
 
 

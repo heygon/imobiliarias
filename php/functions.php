@@ -94,10 +94,12 @@ class Imob
         $sqlP = $sql." Status = 1 ";
         $params = $busca['tipoNegocio'];
 
+        $sql .= " Status = 1 ORDER BY PrecoVenda ASC GROUP BY id";
+        
         if($p == 0){
-            $sql .= " Status = 1 GROUP BY id LIMIT 12 ";
+            $sql .= " LIMIT 12 ";
         }else{
-            $sql .= " Status = 1 GROUP BY id LIMIT ".$p.",12 ";
+            $sql .= " LIMIT ".$p.",12 ";
         }
 
 
@@ -325,20 +327,22 @@ class Imob
         $this->query("TRUNCATE TABLE Fotos ");
         $this->query("TRUNCATE TABLE imovies ");
         
-        
-        
-        //$xml = simplexml_load_file("imob.xml");
-        $xml = simplexml_load_file("https://www.okeimoveis.com.br/gestao/webservices/IntegracaoImoveisOke.webservice.php?ccu=2039");
+        $content = utf8_encode(file_get_contents('https://www.okeimoveis.com.br/gestao/webservices/IntegracaoImoveisOke.webservice.php?ccu=2039'));
+        $xml = simplexml_load_string($content);
 
         echo '<pre>';
 
         $xml = $xml->Imoveis->Imovel;
-        print_r($xml[1]);
+        //print_r($xml[3]);
 
         /*
         for ($i=0; $i < count($xml) ; $i++) { 
 
+            //print_r($xml[3]);
+            //print_r($xml[3]->CEP);
+            //print_r('<br/><br/>');
 
+            
             $confere = $this->query("SELECT CodigoImovel FROM imovies WHERE CodigoImovel = '" . trim($xml[$i]->CodigoImovel) . "' ");
             if(!mysqli_num_rows($confere)){
 
@@ -411,7 +415,7 @@ class Imob
                     ''
                 )<br/>";
 
-
+                
                 $this->query("
                     INSERT INTO imovies (
                         CodigoImovel,
@@ -484,6 +488,7 @@ class Imob
                 ");
                 
                 
+                
             
 
                 // Recupera o último ID de anúncio inserido
@@ -509,8 +514,6 @@ class Imob
                         )
                     ");
                 }
-                
-                
             }
             
         }

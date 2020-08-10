@@ -177,6 +177,13 @@
             });
 
             function busca(){
+
+                var chave = $('.chave').val().split('+');
+                console.log(chave);
+                chave = chave.join(' ');
+                console.log(chave);
+                $('.chave').val(chave);
+
                 jQuery.ajax({
                   url: 'php/functions.php',
                   type: 'POST',
@@ -189,7 +196,7 @@
                       quarto : $('.quarto').val(),
                       garagem : $('.garagem').val(),
                       tipoImovel : $('.tipoImovel').val(),
-                      chave : $('.chave').val(),
+                      chave,
                     }
                 })
                 .done(function(xhr) {
