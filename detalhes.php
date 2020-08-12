@@ -42,9 +42,7 @@
         margin-top:3%;
         overflow: hidden;
       }
-    </style>
-
-    <style>
+      
       .carousel-indicators{
         width:80%;
         margin-left:10%;
@@ -222,25 +220,23 @@
           
 
           <div class="row">
-            <iframe class="col recebeVideo" width="560" height="400" src="https://www.youtube.com/watch?v=DguHgiUg_v8&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            
-            <!--iframe class="col recebeVideo" width="560" height="400" src="https://www.youtube.com/watch?v=DguHgiUg_v8&feature=youtu.be" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe-->
+            <div class="recebeVideo col-12"></div>
           </div>
 
           
           
 
           </br>
-          <?php
-            /* if(!$imob->detalhes($_GET['i'])['Mapa'] == ''){
-              ?>
-              <div class="row">
-                <iframe class="col" src="<?php echo $imob->detalhes($_GET['i'])['Mapa']; ?>" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>
-              </div>
-              <?php
-            } */
-          ?>
+          <div class="row ">
+            <div class="recebeMapa col-12"></div>
+          </div>
+
           
+
+
+
+
+
           <div class="col-12">&nbsp;</div>
           
         </div>
@@ -493,13 +489,20 @@
               video = video[1].split('&');
               video = video[0];
               video = 'https://www.youtube.com/embed/'+video;
-
             }else{
               video = video[0];
             }
 
+            $('.recebeVideo').html('<iframe class="col p-2" width="560" height="400" src="'+video+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+          }
 
-            $('.recebeVideo').attr({ 'src' : video });
+
+          console.log(obj.Video);
+          console.log(obj.Mapa);
+          if(obj.Mapa == '' || obj.Video == undefined){
+            $('.recebeMapa').hide();
+          }else{
+            $('.recebeMapa').html('<iframe class="col p-2" src="'+obj.Mapa+'" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>');
           }
           
           $('.corpoEmail').val('Olá, eu gostaria de obter mais informações sobre este imóvel Código : ' + obj.CodigoImovel + ' - ' + obj.TituloImovel + ' - ' + obj.Cidade + ' - ' + obj.UF);

@@ -19,7 +19,7 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        $con = mysqli_connect('localhost','heygon','4595995ab','imobiliaria');
+        $con = mysqli_connect('localhost','root','root','imobiliaria');
         //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
@@ -335,7 +335,7 @@ class Imob
         $xml = $xml->Imoveis->Imovel;
         //print_r($xml[3]);
 
-        /*
+        
         for ($i=0; $i < count($xml) ; $i++) { 
 
             //print_r($xml[3]);
@@ -348,8 +348,16 @@ class Imob
 
                 $vendaAluga = (trim($xml[$i]->PrecoVenda) == '' || trim($xml[$i]->PrecoVenda) == null ) ? 2 : 1 ;
                 
-            
-                echo "INSERT INTO imovies (
+                if($xml[$i]->latitude == 0 || $xml[$i]->latitude == '0' || $xml[$i]->longitude == 0 || $xml[$i]->longitude == '0'){
+                    $mapa = '';
+                }else{
+                    $latitude = floatval($xml[$i]->latitude);
+                    $longitude = floatval($xml[$i]->longitude);
+                    $mapa = 'https://maps.google.com/maps?q='.$latitude.','.$longitude.'&hl=es&z=14&amp;output=embed';
+                }
+
+                $this->query("
+                INSERT INTO imovies (
                     CodigoImovel,
                     TipoImovel,
                     SubTipoImovel,
@@ -412,80 +420,8 @@ class Imob
                     '".trim(@$xml[$i]->Videos->Video->Url)."',
                     '1',
                     '". $vendaAluga ."',
-                    ''
-                )<br/>";
-
-                
-                $this->query("
-                    INSERT INTO imovies (
-                        CodigoImovel,
-                        TipoImovel,
-                        SubTipoImovel,
-                        TituloImovel,
-                        UF,
-                        Modelo,
-                        Endereco,
-                        VisualizarMapa,
-                        DivulgarEndereco,
-                        Cidade,
-                        Bairro,
-                        Numero,
-                        Complemento,
-                        CEP,
-                        PrecoVenda,
-                        PrecoLocacao,
-                        PrecoCondominio,
-                        ValorIPTU,
-                        UnidadeMetrica,
-                        AreaUtil,
-                        AreaTotal,
-                        QtdDormitorios,
-                        QtdSuites,
-                        QtdBanheiros,
-                        QtdVagas,
-                        Observacao,
-                        Caracteristicas,
-                        Video,
-                        Status,
-                        VendaAluga,
-                        Mapa,
-                        PrecoLocacao
-                    ) VALUES(
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->CodigoImovel))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->TipoImovel))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->SubTipoImovel))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->TituloImovel))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->UF))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Modelo))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Endereco))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->VisualizarMapa))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->DivulgarEndereco))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Cidade))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Bairro))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Numero))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Complemento))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->CEP))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoVenda))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoLocacao))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->PrecoCondominio))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->ValorIPTU))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->UnidadeMetrica))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->AreaUtil))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->AreaTotal))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdDormitorios))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdSuites))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdBanheiros))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->QtdVagas))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Observacao))."',
-                        '".trim(preg_replace("/'/s"," ",$xml[$i]->Caracteristicas))."',
-                        '".trim(@$xml[$i]->Videos->Video->Url)."',
-                        '1',
-                        '". $vendaAluga ."',
-                        '<iframe width="300" height="170" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='.$xml[$i]->Latitude.','+.$xml[$i]->Longitude.+'&hl=es&z=14&amp;output=embed"></iframe>',
-                        '".trim($xml[$i]->PrecoLocacao)."'
-                        
-                    )
-                ");
+                    '".$mapa."'
+                )");
                 
                 
                 
@@ -517,7 +453,7 @@ class Imob
             }
             
         }
-        */
+        
         
         echo '</pre>';
 
