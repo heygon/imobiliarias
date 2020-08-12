@@ -10,8 +10,6 @@ setlocale(LC_MONETARY, 'pt-br');
 
 
 
-
-
 class Imob
 {
     
@@ -19,8 +17,8 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        $con = mysqli_connect('localhost','root','root','imobiliaria');
-        //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
+        //$con = mysqli_connect('localhost','root','root','imobiliaria');
+        $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
     }
@@ -136,7 +134,7 @@ class Imob
             ?>
                 <div class="col-md-4 col-sm-12">
                     <div class="card">
-                        <a href="detalhes.php?i=<?php echo $row['id']; ?>">
+                        <a href="https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>">
                             <div style="height:200px; overflow:hidden">
                                 <?php
                                     $img = $this->query("SELECT * FROM Fotos WHERE Imovel = '".$row['id']."' ORDER BY id ASC LIMIT 1");
@@ -147,7 +145,7 @@ class Imob
                         </a>
 
                         <div class="card-body">
-                            <a href="detalhes.php?i=<?php echo $row['id']; ?>">
+                            <a href="https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>">
                                 <h6 class="titulo card-title">
                                     <?php echo $row['TituloImovel']; ?>
                                 </h6>
@@ -160,16 +158,16 @@ class Imob
                         <?php
                             if(!$row['PrecoVenda'] == ''){
                                 ?>
-                                    <h5>Valor: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
+                                    <h5 class="branco">Valor: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
                                 <?php
                             }else{
                                 if($row['PrecoLocacao'] == ''){
                                     ?>
-                                        <h5>Não informado</h5>
+                                        <h5 class="branco">Não informado</h5>
                                     <?php
                                 }else{
                                     ?>
-                                        <h5>Aluguel: R$ <?php echo number_format(intval($row['PrecoLocacao']),2,",","."); ?></h5>
+                                        <h5 class="branco">Aluguel: R$ <?php echo number_format(intval($row['PrecoLocacao']),2,",","."); ?></h5>
                                     <?php
                                 }
                             }
@@ -180,14 +178,14 @@ class Imob
                                 <div class="col-md-8 col-sm-12">
                                     <div class="minor">COMPARTILHAR ESSA OFERTA:</div>
                                     <div class="icones pt-2">
-                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cfacebook.png"></a>
-                                        <a href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cwhatsapp.png"></a>
-                                        <a href="https://twitter.com/intent/tweet?url=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/ctwitter.png"></a>
-                                        <a href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="img/cemail.png"></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="https://imobiliariadiogenes.com.br/busca/img/cfacebook.png"></a>
+                                        <a href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="https://imobiliariadiogenes.com.br/busca/img/cwhatsapp.png"></a>
+                                        <a href="https://twitter.com/intent/tweet?url=https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="https://imobiliariadiogenes.com.br/busca/img/ctwitter.png"></a>
+                                        <a href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>" target="_blank"><img class="iconscase" src="https://imobiliariadiogenes.com.br/busca/img/cemail.png"></a>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-sm-12 p-0 mt-3">
-                                    <a class="btnfit btn btn-pri col-12" href="detalhes.php?i=<?php echo $row['id']; ?>">Saiba mais</a>
+                                    <a class="btnfit btn btn-pri col-12" href="https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>">Saiba mais</a>
                                 </div>
                             </div>
                         </div>
@@ -475,9 +473,7 @@ class Imob
 
 $imob = new Imob();
 
-if(isset($_GET['xml'])){
-    $imob->imoveis();
-}
+//$imob->imoveis();
 //$imob->json();
 
 

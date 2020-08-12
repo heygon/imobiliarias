@@ -250,10 +250,12 @@
               </div>
               <div class="card-body">
                 <div class="talk col-12">
+                    <a href="https://api.whatsapp.com/send?phone=556141018555&text=Ol%C3%A1%20Di%C3%B3genes%20Im%C3%B3veis!" target="_blank">
                   <h1 class="telefone">
-                    <img class="icons" src="img/cwhatsapp.png">
-                    (61) 99999-9999
+                    <img style="width:40px;" src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/05/whatsapp.png">
+                    61 4101-8555
                   </h1>
+                  </a>
                 </div>
 
                 <div class="col-12">&nbsp;</div>
