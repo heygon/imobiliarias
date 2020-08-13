@@ -92,7 +92,7 @@ class Imob
         $sqlP = $sql." Status = 1 ";
         $params = $busca['tipoNegocio'];
 
-        $sql .= " Status = 1 ORDER BY PrecoVenda ASC GROUP BY id";
+        $sql .= " Status = 1 GROUP BY id ORDER BY PrecoVenda ASC ";
         
         if($p == 0){
             $sql .= " LIMIT 12 ";
@@ -124,7 +124,9 @@ class Imob
 
     public function corpoResultado($sql,$sqlP,$params)
     {
+
         $imob = $this->query($sql);
+        
 
         if(!mysqli_num_rows($imob)){
 
@@ -147,11 +149,11 @@ class Imob
                         <div class="card-body">
                             <a href="https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>">
                                 <h6 class="titulo card-title">
-                                    <?php echo $row['TituloImovel']; ?>
+                                    <?php echo utf8_decode($row['TituloImovel']); ?>
                                 </h6>
                             </a>
                             <h6>
-                                <?php echo $row['Cidade'].'-'.$row['UF']; ?>
+                                <?php echo utf8_decode($row['Cidade'].'-'.$row['UF']); ?>
                             </h6>
                         </div>
                         <div class="destaque col-12 p-2" style="height:50px;">
@@ -251,8 +253,8 @@ class Imob
         $row = $detalhes->fetch_array();
 
         $dados['id']              = $row['id'];
-        $dados['TituloImovel']    = $row['TituloImovel'];
-        $dados['Observacao']      = $row['Observacao'];
+        $dados['TituloImovel']    = utf8_decode($row['TituloImovel']);
+        $dados['Observacao']      = utf8_decode($row['Observacao']);
         $dados['PrecoVenda']      = $row['PrecoVenda'];
         $dados['PrecoLocacao']    = $row['PrecoLocacao'];
         $dados['TipoImovel']      = $row['TipoImovel'];
@@ -473,7 +475,9 @@ class Imob
 
 $imob = new Imob();
 
-//$imob->imoveis();
+if(isset($_GET['xml'])){
+    $imob->imoveis();
+}
 //$imob->json();
 
 
