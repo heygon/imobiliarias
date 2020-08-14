@@ -17,7 +17,7 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        //$con = mysqli_connect('localhost','root','root','imobiliaria');
+        //$con = mysqli_connect('localhost','heygon','4595995ab','imobiliaria');
         $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
@@ -31,8 +31,8 @@ class Imob
         
         //print_r($busca);
 
-        if(isset($busca['p'])){
-            $p = $busca['p'];
+        if(isset($busca['pagination'])){
+            $p = $busca['pagination'];
         }else{
             $p = 0;
         }
@@ -215,16 +215,16 @@ class Imob
                     $num = 11; 
                 }
 
-                echo '<nav class=" col-6 offset-3 text-center prepagination ">';
+                echo '<nav class=" col-6 offset-3 mt-5 text-center prepagination ">';
                 echo '<ul class="pagination">';
                     for ($i=0; $i < $num; $i++) { 
                         echo '<li class="page-item  ';
-                        if(isset($_GET['p'])){
-                            if($_GET['p'] == $i ){
+                        if(isset($_GET['pagination'])){
+                            if($_GET['pagination'] == $i ){
                                 echo 'active';
                             }
                         }
-                        echo ' "><a class="page-link" href="?p='.$i.'">'.$i.'</a></li>';
+                        echo ' "><a class="page-link" data-link="'.$i.'" href="#">'.$i.'</a></li>';
                     }
                 echo '</ul>';
                 echo '</nav>';

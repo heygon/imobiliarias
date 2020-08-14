@@ -173,10 +173,10 @@
 
 
             jQuery('.btnBuscar').click(function(){
-              busca();
+              busca('');
             });
 
-            function busca(){
+            function busca(pagination){
 
                 var chave = $('.chave').val().split('+');
                 console.log(chave);
@@ -184,32 +184,51 @@
                 console.log(chave);
                 $('.chave').val(chave);
 
+                var tipoNegocio = $('.tipoNegocio').val();
+                var Cidade = $('.Cidade').val();
+                var Preco = $('.Preco').val();
+                var quarto = $('.quarto').val();
+                var garagem = $('.garagem').val();
+                var tipoImovel = $('.tipoImovel').val();
+
+                console.log('pagination -> '+pagination);
+
+                window.history.pushState("object or string", "Busca", 'busca.php?tipoNegocio='+tipoNegocio+'&Cidade='+Cidade+'&Preco='+Preco+'&quarto='+quarto+'&garagem='+garagem+'&tipoImovel='+tipoImovel+'&chave='+chave+((pagination == '')? '' : '&pagination='+pagination));
+
                 jQuery.ajax({
                   url: 'php/functions.php',
                   type: 'POST',
                   data:
                     {
                       corpoResultado: '',
-                      tipoNegocio : $('.tipoNegocio').val(),
-                      Cidade : $('.Cidade').val(),
-                      Preco : $('.Preco').val(),
-                      quarto : $('.quarto').val(),
-                      garagem : $('.garagem').val(),
-                      tipoImovel : $('.tipoImovel').val(),
+                      tipoNegocio,
+                      Cidade,
+                      Preco,
+                      quarto,
+                      garagem,
+                      tipoImovel,
                       chave,
+                      pagination
                     }
                 })
                 .done(function(xhr) {
                   console.log(xhr);
                   jQuery('.recebeResultadodaBusca').html(xhr);
 
-                  window.history.pushState("object or string", "Site Imóveis", "busca.php?tipoNegocio="+$('.tipoNegocio').val()+"&Cidade="+$('.Cidade').val()+"&Preco="+$('.Preco').val()+"&quarto="+$('.quarto').val()+"&garagem="+$('.garagem').val()+"&tipoImovel="+$('.tipoImovel').val()+"&chave="+$('.chave').val());
+                  window.history.pushState("object or string", "Busca", 'busca.php?tipoNegocio='+tipoNegocio+'&Cidade='+Cidade+'&Preco='+Preco+'&quarto='+quarto+'&garagem='+garagem+'&tipoImovel='+tipoImovel+'&chave='+chave+((pagination == '')? '' : '&pagination='+pagination));
+
+                  $('.page-link').click(function(e){
+                    e.preventDefault();
+                    $(this).addClass('active');
+                    busca($(this).attr('data-link'));
+                  });
                 })
                 .fail(function() {
                   console.log('error');
                 });
             }
-            busca();
+            busca('');
+
           });
     </script>
 
