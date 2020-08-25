@@ -29,7 +29,7 @@ class Imob
 
     public function listarImoveis($busca){
         
-        //print_r($busca);
+        print_r($busca);
 
         if(isset($busca['pagination'])){
             $p = $busca['pagination'];
@@ -92,12 +92,12 @@ class Imob
         $sqlP = $sql." Status = 1 ";
         $params = $busca['tipoNegocio'];
 
-        $sql .= " Status = 1 GROUP BY id ORDER BY PrecoVenda  ASC, PrecoLocacao ASC ";
+        $sql .= " Status = 1 GROUP BY id ORDER BY PrecoVenda ASC ";
         
         if($p == 0){
             $sql .= " LIMIT 12 ";
         }else{
-            $sql .= " LIMIT ".($p*12).",12 ";
+            $sql .= " LIMIT ".$p.",12 ";
         }
 
 
@@ -106,6 +106,21 @@ class Imob
         $this->corpoResultado($sql,$sqlP,$params);
         
     }
+
+    public function listarImoveisCompra(){
+
+        $imob = "SELECT * FROM imovies WHERE VendaAluga = 1 AND Status = 1 ORDER BY rand() LIMIT 3 ";
+        $this->corpoResultado($imob,'','');
+
+    }
+
+    public function listarImoveisAluguel(){
+
+        $imob = "SELECT * FROM imovies WHERE VendaAluga = 2 AND Status = 1 ORDER BY rand() LIMIT 3";
+        $this->corpoResultado($imob,'','');
+
+    }
+
 
     public function corpoResultado($sql,$sqlP,$params)
     {
@@ -145,11 +160,7 @@ class Imob
                         <?php
                             if(!$row['PrecoVenda'] == ''){
                                 ?>
-                                    
-
-                                    <h5 class="branco">Valor: R$ <?php echo number_format(intval($row['PrecoVenda']), 2, ',', '.'); ?></h5>
-
-                                    
+                                    <h5 class="branco">Valor: R$ <?php echo number_format(intval($row['PrecoVenda']),2,",","."); ?></h5>
                                 <?php
                             }else{
                                 if($row['PrecoLocacao'] == ''){
@@ -158,7 +169,7 @@ class Imob
                                     <?php
                                 }else{
                                     ?>
-                                        <h5 class="branco">Aluguel: R$ <?php echo number_format(intval($row['PrecoLocacao']), 2, ',', '.'); ?></h5>
+                                        <h5 class="branco">Aluguel: R$ <?php echo number_format(intval($row['PrecoLocacao']),2,",","."); ?></h5>
                                     <?php
                                 }
                             }
@@ -223,22 +234,6 @@ class Imob
         }
     }
 
-
-
-    public function listarImoveisCompra(){
-
-        $imob = "SELECT * FROM imovies WHERE VendaAluga = 1 AND Status = 1 ORDER BY PrecoVenda,rand() LIMIT 3 ";
-        $this->corpoResultado($imob,'','');
-
-    }
-
-    public function listarImoveisAluguel(){
-
-        $imob = "SELECT * FROM imovies WHERE VendaAluga = 2 AND Status = 1 ORDER BY PrecoLocacao,rand() LIMIT 3";
-        $this->corpoResultado($imob,'','');
-
-    }
-
     public function detalhes($id)
     {
 
@@ -268,7 +263,7 @@ class Imob
         $dados['AreaUtil']        = $row['AreaUtil'];
         $dados['QtdDormitorios']  = $row['QtdDormitorios'];
         $dados['CodigoImovel']    = $row['CodigoImovel'];
-        $dados['Cidade']          = utf8_decode($row['Cidade']);
+        $dados['Cidade']          = $row['Cidade'];
         $dados['UF']              = $row['UF'];
         $dados['Video']           = $row['Video'];
         $dados['Mapa']            = $row['Mapa'];

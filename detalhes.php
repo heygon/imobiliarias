@@ -323,7 +323,9 @@
 
         
         function formatValor(e){
-          return e.toLocaleString('pt-BR', { minimumFractionDigits: 2});
+          var valor = parseInt(e);
+          valor = valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+          return valor;
         }
 
 
@@ -363,6 +365,7 @@
           
             }else{
           
+
               jQuery('.load').remove();
               jQuery('.btnEnviarContato').before('<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>');
               setTimeout(function(){
