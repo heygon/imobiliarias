@@ -1,0 +1,88 @@
+[08-May-2020 09:28:57 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 09:28:57 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 09:29:14 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 09:29:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 09:29:48 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 09:29:48 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 09:31:58 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 09:31:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 09:33:47 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 09:33:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 10:01:29 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 10:01:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 10:01:41 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 10:01:41 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 10:07:16 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 10:07:16 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 11:01:35 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'ofer1649_busca'@'localhost' to database 'ofer1649_busca' in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[08-May-2020 11:01:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:26
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(85): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/index.php(144): Imob->listarImoveis(Array)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 26
+[08-May-2020 15:00:56 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 55
+[08-May-2020 15:00:56 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 86
+[08-May-2020 15:00:57 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 55
+[08-May-2020 15:00:57 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 86
+[08-May-2020 15:00:57 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 55
+[08-May-2020 15:00:57 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 86
+[12-May-2020 13:13:00 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 55
+[12-May-2020 13:13:00 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 86
+[12-May-2020 13:17:58 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 55
+[12-May-2020 13:17:58 America/Sao_Paulo] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home2/ofer1649/imobiliariadiogenes.com.br/busca/detalhes.php on line 86
+[13-May-2020 16:13:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:24
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(360): Imob->query('\n              ...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(410): Imob->imoveis()
+#2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/teste.php(2): require('/home2/ofer1649...')
+#3 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 24
+[18-May-2020 09:57:03 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function listarImoveis() on null in /home2/ofer1649/imobiliariadiogenes.com.br/busca/busca.php:143
+Stack trace:
+#0 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/busca.php on line 143
+[18-May-2020 09:57:15 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function listarImoveis() on null in /home2/ofer1649/imobiliariadiogenes.com.br/busca/busca.php:143
+Stack trace:
+#0 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/busca.php on line 143

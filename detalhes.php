@@ -164,7 +164,7 @@
             <div class="col-lg-4 col-sm-12">
               <div class="card">
                 <div class="card-header sub">
-                  <strong>Valor do imóvel - R$ <span class="recebePrecoVenda"></span> </strong>
+                  <strong>Valor do imóvel <br/> R$ <span class="recebePrecoVenda"></span> </strong>
                 </div>
                 <div class="card-body text-left">
                   <ul class="recebeInfosImoveis"></ul>

@@ -329,3 +329,18 @@ Stack trace:
 #2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(457): Imob->listarImoveisAluguel()
 #3 {main}
   thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[12-Aug-2020 13:35:29 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:35:51 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:35:54 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:35:58 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:36:07 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:46:30 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:46:45 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:07 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:09 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:11 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:12 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:16 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:19 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:26 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:03:31 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129

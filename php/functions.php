@@ -92,7 +92,7 @@ class Imob
         $sqlP = $sql." Status = 1 ";
         $params = $busca['tipoNegocio'];
 
-        $sql .= " Status = 1 GROUP BY id ORDER BY PrecoVenda ASC ";
+        $sql .= " Status = 1 GROUP BY id ORDER BY PrecoVenda,PrecoLocacao ASC ";
         
         if($p == 0){
             $sql .= " LIMIT 12 ";
@@ -109,14 +109,14 @@ class Imob
 
     public function listarImoveisCompra(){
 
-        $imob = "SELECT * FROM imovies WHERE VendaAluga = 1 AND Status = 1 ORDER BY rand() LIMIT 3 ";
+        $imob = "SELECT * FROM imovies WHERE VendaAluga = 1 AND Status = 1 ORDER BY PrecoVenda,rand() LIMIT 3 ";
         $this->corpoResultado($imob,'','');
 
     }
 
     public function listarImoveisAluguel(){
 
-        $imob = "SELECT * FROM imovies WHERE VendaAluga = 2 AND Status = 1 ORDER BY rand() LIMIT 3";
+        $imob = "SELECT * FROM imovies WHERE VendaAluga = 2 AND Status = 1 ORDER BY PrecoLocacao,rand() LIMIT 3";
         $this->corpoResultado($imob,'','');
 
     }
@@ -255,7 +255,7 @@ class Imob
         $dados['id']              = $row['id'];
         $dados['TituloImovel']    = utf8_decode($row['TituloImovel']);
         $dados['Observacao']      = utf8_decode($row['Observacao']);
-        $dados['PrecoVenda']      = $row['PrecoVenda'];
+        $dados['PrecoVenda']      = number_format(intval($row['PrecoVenda']));
         $dados['PrecoLocacao']    = $row['PrecoLocacao'];
         $dados['TipoImovel']      = $row['TipoImovel'];
         $dados['SubTipoImovel']   = $row['SubTipoImovel'];
@@ -263,7 +263,7 @@ class Imob
         $dados['AreaUtil']        = $row['AreaUtil'];
         $dados['QtdDormitorios']  = $row['QtdDormitorios'];
         $dados['CodigoImovel']    = $row['CodigoImovel'];
-        $dados['Cidade']          = $row['Cidade'];
+        $dados['Cidade']          = utf8_decode($row['Cidade']);
         $dados['UF']              = $row['UF'];
         $dados['Video']           = $row['Video'];
         $dados['Mapa']            = $row['Mapa'];
