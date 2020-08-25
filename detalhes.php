@@ -322,6 +322,12 @@
       jQuery(document).ready(function(){
 
         
+        function formatValor(e){
+          return e.toLocaleString('pt-BR', { minimumFractionDigits: 2});
+        }
+
+
+
         jQuery('.btnEnviarContato').click(function(){
           jQuery('.btnEnviarContato').hide().before('<div class=" load col-12 center-align ">Enviado...</div>');
 
@@ -453,11 +459,12 @@
             if(obj.PrecoLocacao == ''){
               $('.recebePrecoVenda').html('Não informado');
             }else{
-              $('.recebePrecoVenda').html(obj.PrecoLocacao);
+              $('.recebePrecoVenda').html(formatValor(obj.PrecoLocacao));
             }
           }else{
-            $('.recebePrecoVenda').html(obj.PrecoVenda);
+            $('.recebePrecoVenda').html(formatValor(obj.PrecoVenda));
           }
+
 
           
           apresentaCampo('Código do imóvel', obj.CodigoImovel);

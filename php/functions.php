@@ -255,7 +255,7 @@ class Imob
         $dados['id']              = $row['id'];
         $dados['TituloImovel']    = utf8_decode($row['TituloImovel']);
         $dados['Observacao']      = utf8_decode($row['Observacao']);
-        $dados['PrecoVenda']      = number_format(intval($row['PrecoVenda']));
+        $dados['PrecoVenda']      = $row['PrecoVenda'];
         $dados['PrecoLocacao']    = $row['PrecoLocacao'];
         $dados['TipoImovel']      = $row['TipoImovel'];
         $dados['SubTipoImovel']   = $row['SubTipoImovel'];
