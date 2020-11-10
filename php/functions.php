@@ -17,8 +17,8 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        //$con = mysqli_connect('localhost','root','root','imobiliaria');
-        $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
+        $con = mysqli_connect('localhost','root','root','imobiliaria');
+        //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
     }
@@ -92,7 +92,7 @@ class Imob
         $sqlP = $sql." Status = 1 ";
         $params = $busca['tipoNegocio'];
 
-        $sql .= " Status = 1 GROUP BY id ORDER BY PrecoVenda  ASC, PrecoLocacao ASC ";
+        $sql .= " Status = 1 GROUP BY id ORDER BY ABS(PrecoVenda)  ASC, ABS(PrecoLocacao) ASC ";
         
         if($p == 0){
             $sql .= " LIMIT 12 ";
