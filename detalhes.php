@@ -5,6 +5,12 @@
     <meta charset="utf-8">
     <!-- Responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+   
+         
+    
+    
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo.css">
@@ -164,7 +170,7 @@
             <div class="col-lg-4 col-sm-12">
               <div class="card">
                 <div class="card-header sub">
-                  <strong>Valor do imóvel <br/> R$ <span class="recebePrecoVenda"></span> </strong>
+                  <strong>Valor do imóvel <br/> <span class="recebePrecoVenda"></span> </strong>
                 </div>
                 <div class="card-body text-left">
                   <ul class="recebeInfosImoveis"></ul>
@@ -437,7 +443,9 @@
             console.log(img);
 
             jQuery('#imagemCarrousel').fadeIn();
-            jQuery('#recebeImagemGrande').html('<img src="'+img+'" style="width:100%"/>');
+            jQuery('#recebeImagemGrande').html('<img src="'+img+'" style="width:100%" />');
+            
+           
             
           });
           

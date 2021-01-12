@@ -344,3 +344,25 @@ Stack trace:
 [12-Aug-2020 14:00:19 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
 [12-Aug-2020 14:00:26 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
 [12-Aug-2020 14:03:31 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[25-Aug-2020 09:51:27 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'heygon'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[25-Aug-2020 09:51:27 America/Sao_Paulo] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 245
+[25-Aug-2020 09:51:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(249): Imob->query('SELECT * FROM F...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(508): Imob->detalhes(NULL)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[25-Aug-2020 09:51:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(231): Imob->corpoResultado('SELECT * FROM i...', '', '')
+#2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(494): Imob->listarImoveisCompra()
+#3 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[25-Aug-2020 09:51:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(238): Imob->corpoResultado('SELECT * FROM i...', '', '')
+#2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(498): Imob->listarImoveisAluguel()
+#3 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27

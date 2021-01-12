@@ -17,8 +17,8 @@ class Imob
     ///////////////////CONECTION////////////////////////
     ////////////////////////////////////////////////////
     private function con(){
-        $con = mysqli_connect('localhost','root','root','imobiliaria');
-        //$con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
+        //$con = mysqli_connect('localhost','heygon','4595995ab','imobiliaria');
+        $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
         //$con->set_charset('utf8');
         return $con;
     }
