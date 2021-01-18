@@ -17,12 +17,19 @@
     <title>Site Imóveis</title>
 
 
-    <meta property="og:title" content="Diógenes Imóveis"/>
-    <meta property="og:image" content="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/02/logo-1.png"/>
-    <meta property="og:url" content="https://imobiliariadiogenes.com.br"/>
-    <meta property="og:site_name" content="Diógenes Imóveis"/>
+    <!-- 
+      <meta property="og:title" content="Diógenes Imóveis"/>
+      <meta property="og:image" content="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/02/logo-1.png"/>
+      <meta property="og:url" content="https://imobiliariadiogenes.com.br"/>
+      <meta property="og:site_name" content="Diógenes Imóveis"/>
+    -->
 
+    
 
+    <meta property="og:site_name" content="Diógenes Imóveis">
+    <meta property="og:title" content="Detalhes sobre o imóvel" />
+    <meta property="og:description" content="Veja mais detalhes sobre o imóvel deste link" />
+    <meta property="og:image" itemprop="image" content="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resSU1HXzIwMjAwMzA2XzE0MDIxOS5qcGc=5f660729bc70b.jpg">
 
     <style>
       #imagemCarrousel{
@@ -404,6 +411,7 @@
         } catch (error) {
           
         }
+
 
 
         jQuery.ajax({

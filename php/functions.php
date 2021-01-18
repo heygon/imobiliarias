@@ -121,7 +121,7 @@ class Imob
             ?>
                 <div class="col-md-4 col-sm-12">
                     <div class="card">
-                        <a href="https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>">
+                        <a href="https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['CodigoImovel']; ?>">
                             <div style="height:200px; overflow:hidden">
                                 <?php
                                     $img = $this->query("SELECT * FROM Fotos WHERE Imovel = '".$row['id']."' ORDER BY id ASC LIMIT 1");
@@ -132,7 +132,7 @@ class Imob
                         </a>
 
                         <div class="card-body">
-                            <a href="https://imobiliariadiogenes.com.br/imovel?i=<?php echo $row['id']; ?>">
+                            <a href="https://imobiliariadiogenes.com.br/busca/detalhes.php?i=<?php echo $row['CodigoImovel']; ?>">
                                 <h6 class="titulo card-title">
                                     <?php echo utf8_decode($row['TituloImovel']); ?>
                                 </h6>
@@ -246,7 +246,11 @@ class Imob
 
         $dados = array();
 
-        $img = $this->query("SELECT * FROM Fotos WHERE Imovel = '".$id."' ");
+        $detalhes = $this->query("SELECT * FROM imovies WHERE CodigoImovel = '".$id."' ");
+        $row = $detalhes->fetch_array();
+
+
+        $img = $this->query("SELECT * FROM Fotos WHERE Imovel = '".$row['id']."' ");
 
         while($im = $img->fetch_array()){
             $dados['Galeria'][] = array(
@@ -254,8 +258,6 @@ class Imob
             );
         }
 
-        $detalhes = $this->query("SELECT * FROM imovies WHERE id = '".$id."' ");
-        $row = $detalhes->fetch_array();
 
         $dados['id']              = $row['id'];
         $dados['TituloImovel']    = utf8_decode($row['TituloImovel']);
