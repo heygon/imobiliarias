@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
    
-         
+    <meta property="og:site_name" content="Diógenes Imóveis">
+    <meta property="og:title" content="EXCELENTE SALA COMERCIAL QUADRA 08 DE SOBRADINHO" />
+    <meta property="og:description" content="Veja mais detalhes sobre o imóvel deste link" />
+    <meta property="og:image" itemprop="image" content="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resRmFjaGFkYSBURi5QTkc=5f51288f90454.PNG">
     
     
     
@@ -96,6 +99,7 @@
         });
 
 
+
         var url = document.location.href;
 
         try {
@@ -118,16 +122,6 @@
           //console.log(xhr);
 
           var obj = JSON.parse(xhr);
-
-
-          var meta = '<meta property="og:site_name" content="Diógenes Imóveis">';
-          meta += '<meta property="og:title" content="'+obj.TituloImovel+'" />';
-          meta += '<meta property="og:description" content="Veja mais detalhes sobre o imóvel deste link" />';
-          meta += '<meta property="og:image" itemprop="image" content="'+obj.Galeria[0].URL+'">';
-
-          $('meta').append(meta);
-
-
 
 
           var tumb = '';
