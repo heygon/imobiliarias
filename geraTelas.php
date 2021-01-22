@@ -352,10 +352,10 @@
                             </div>
                             <div class="icones card-body">
                             <div class="row">
-                                <a class="col-3 compartilharFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="img/cfacebook.png"></a>
-                                <a class="col-3 compartilharWhats" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="img/cwhatsapp.png"></a>
-                                <a class="col-3  compartilharTwitter" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="img/ctwitter.png"></a>
-                                <a class="col-3  compartilharEmail" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="img/cemail.png"></a>
+                                <a class="col-3 compartilharFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cfacebook.png"></a>
+                                <a class="col-3 compartilharWhats" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cwhatsapp.png"></a>
+                                <a class="col-3  compartilharTwitter" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/ctwitter.png"></a>
+                                <a class="col-3  compartilharEmail" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cemail.png"></a>
                             </div>
                             </div>
                         </div>
@@ -407,10 +407,22 @@
                                 }else{
                                     video = video[0];
                                 }
-                            -->
-                            
 
-                            '.( $ri['Video'] == '' ? '' : '<iframe class="col p-2" width="560" height="400" src="'.$ri['Video'].'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' ).'
+                                ';
+
+                                $html .= $ri['Video'];
+
+                                $html .= '
+                                -->
+                            ';
+
+                                $video = @explode('watch?v=',$ri['Video']);
+                                $video = @explode('&',$video[1]);
+                                $video = @'https://www.youtube.com/embed/'.$video[ 0 ];
+
+                            $html .= '
+
+                            '.( $ri['Video'] == '' ? '' : '<iframe class="col p-2" width="560" height="400" src="'.$video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' ).'
 
                         </div>
                     </div>
