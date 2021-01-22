@@ -1,0 +1,482 @@
+[12-May-2020 15:12:56 America/Fortaleza] PHP Warning:  require(php/functions.php): failed to open stream: No such file or directory in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/index.php on line 2
+[12-May-2020 15:12:56 America/Fortaleza] PHP Warning:  require(php/functions.php): failed to open stream: No such file or directory in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/index.php on line 2
+[12-May-2020 15:12:56 America/Fortaleza] PHP Fatal error:  require(): Failed opening required 'php/functions.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/index.php on line 2
+[12-May-2020 15:17:38 America/Fortaleza] PHP Warning:  session_start(): Cannot start session when headers already sent in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 3
+[12-May-2020 15:17:38 America/Fortaleza] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/index.php:1) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 6
+[21-May-2020 15:29:18 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:29:18 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 191
+[21-May-2020 15:29:25 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:29:25 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 191
+[21-May-2020 15:29:26 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:29:26 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 191
+[21-May-2020 15:29:54 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:29:54 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 191
+[21-May-2020 15:29:56 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:29:56 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 191
+[21-May-2020 15:41:56 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:41:56 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:41:57 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:41:57 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:43:43 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:43:43 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:43:43 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:43:43 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:44:36 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:44:36 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:44:36 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:44:36 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:45:25 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:45:25 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:45:26 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:45:26 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:45:54 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:45:54 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:45:54 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:45:54 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:46:26 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:46:26 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:46:26 America/Sao_Paulo] PHP Warning:  mysqli::query() expects parameter 1 to be string, object given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[21-May-2020 15:46:26 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 126
+[21-May-2020 15:47:08 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(447): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:47:08 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(443): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:47:27 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 192
+[21-May-2020 15:47:27 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 194
+[21-May-2020 15:48:04 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(443): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:48:04 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(447): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:49:41 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 194
+[21-May-2020 15:49:41 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 196
+[21-May-2020 15:50:46 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:50:46 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:53:20 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:53:20 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:53:40 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:53:40 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:54:46 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:54:46 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:55:00 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:55:00 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:55:16 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:55:16 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:55:59 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:55:59 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:56:26 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:56:26 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:59:09 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(449): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 15:59:09 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(445): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 16:04:12 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 195
+[21-May-2020 16:06:28 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(451): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 16:06:28 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(447): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 16:08:13 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 112 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(112): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(447): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 16:08:13 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 119 and exactly 2 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:124
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(119): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(451): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 124
+[21-May-2020 16:10:16 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 200
+[21-May-2020 16:11:59 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 120 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(120): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(457): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:11:59 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 113 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(453): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:14:44 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 120 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(120): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(456): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:14:44 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 113 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(452): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:17:16 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 120 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(120): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(460): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:17:16 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 113 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(456): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:32:55 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 120 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(120): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(459): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:32:55 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 113 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(455): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:36:06 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 120 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(120): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(459): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:36:06 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 113 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(455): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:37:12 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 113 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(455): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:37:12 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 120 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(120): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(459): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:37:40 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 113 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(455): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 16:37:40 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 120 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:125
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(120): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(459): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 125
+[21-May-2020 18:10:18 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 118 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:123
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(118): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(457): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 123
+[21-May-2020 18:10:18 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 111 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:123
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(111): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(453): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 123
+[21-May-2020 18:10:27 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 111 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:123
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(111): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(453): Imob->listarImoveisCompra()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 123
+[21-May-2020 18:10:27 America/Sao_Paulo] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function Imob::corpoResultado(), 1 passed in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 118 and exactly 3 expected in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:123
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(118): Imob->corpoResultado(Object(mysqli_result))
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(457): Imob->listarImoveisAluguel()
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 123
+[21-May-2020 18:20:17 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[21-May-2020 18:20:18 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[21-May-2020 18:22:00 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[21-May-2020 18:22:02 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[21-May-2020 18:22:29 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[21-May-2020 18:22:29 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[21-May-2020 18:23:14 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[21-May-2020 18:23:15 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 197
+[26-May-2020 09:52:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(125): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(111): Imob->corpoResultado('SELECT * FROM i...', '', '')
+#2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(453): Imob->listarImoveisCompra()
+#3 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[26-May-2020 09:52:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(125): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(118): Imob->corpoResultado('SELECT * FROM i...', '', '')
+#2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(457): Imob->listarImoveisAluguel()
+#3 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[12-Aug-2020 13:35:29 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:35:51 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:35:54 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:35:58 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:36:07 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:46:30 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 13:46:45 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:07 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:09 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:11 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:12 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:16 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:19 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:00:26 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[12-Aug-2020 14:03:31 America/Sao_Paulo] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 129
+[25-Aug-2020 09:51:27 America/Sao_Paulo] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'heygon'@'localhost' (using password: YES) in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 20
+[25-Aug-2020 09:51:27 America/Sao_Paulo] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, boolean given in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 245
+[25-Aug-2020 09:51:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(249): Imob->query('SELECT * FROM F...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(508): Imob->detalhes(NULL)
+#2 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[25-Aug-2020 09:51:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(231): Imob->corpoResultado('SELECT * FROM i...', '', '')
+#2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(494): Imob->listarImoveisCompra()
+#3 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[25-Aug-2020 09:51:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function query() on boolean in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php:27
+Stack trace:
+#0 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(113): Imob->query('SELECT * FROM i...')
+#1 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(238): Imob->corpoResultado('SELECT * FROM i...', '', '')
+#2 /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php(498): Imob->listarImoveisAluguel()
+#3 {main}
+  thrown in /home2/ofer1649/imobiliariadiogenes.com.br/busca/php/functions.php on line 27
+[22-Jan-2021 14:44:50 America/Sao_Paulo] PHP Warning:  rmdir(html): No such file or directory in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 5
+[22-Jan-2021 14:44:56 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:44:59 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:02 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:05 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:08 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:11 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:14 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:17 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:20 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:23 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:26 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:29 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:32 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:35 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:38 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:41 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:44 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:47 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:50 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:53 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:56 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:45:59 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:02 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:05 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:08 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:11 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:14 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:17 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:20 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:23 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:26 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:29 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:32 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:35 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:38 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:41 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:44 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:47 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:50 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:53 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:56 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:46:59 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:02 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:05 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:08 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:11 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:14 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:17 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:20 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:23 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:26 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:29 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:32 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:35 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:38 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:41 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:44 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:47 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:50 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:53 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:56 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:47:59 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:02 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:05 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:08 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:11 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:14 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:17 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:20 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:23 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:26 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:29 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:32 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:35 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:38 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:41 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:44 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:47 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:50 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:53 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:56 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:48:59 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:02 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:05 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:08 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:11 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:14 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:17 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:20 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:24 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:27 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:30 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:33 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:36 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:39 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:42 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:45 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:48 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:51 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:54 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:49:57 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:00 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:03 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:06 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:09 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:12 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:15 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:18 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:21 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:24 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:27 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:30 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514
+[22-Jan-2021 14:50:33 America/Sao_Paulo] PHP Warning:  mkdir(): File exists in /home2/ofer1649/imobiliariadiogenes.com.br/busca/geraTelas.php on line 514

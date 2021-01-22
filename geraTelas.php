@@ -54,16 +54,16 @@
                 
                         
                 <!-- Bootstrap CSS -->
-                <link rel="stylesheet" href="css/bootstrap.min.css">
-                <link rel="stylesheet" href="css/estilo.css">
+                <link rel="stylesheet" href="https://imobiliariadiogenes.com.br/busca/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://imobiliariadiogenes.com.br/busca/css/estilo.css">
                 <title>Diógenes Imóveis</title>
 
 
 
-                <script type="text/javascript" src="js/jquery.js" ></script>
-                <script type="text/javascript" src="js/popper.min.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-                <script src="js/jquery.flexslider-min.js"></script>
+                <script type="text/javascript" src="https://imobiliariadiogenes.com.br/busca/js/jquery.js" ></script>
+                <script type="text/javascript" src="https://imobiliariadiogenes.com.br/busca/js/popper.min.js"></script>
+                <script src="https://imobiliariadiogenes.com.br/busca/js/bootstrap.min.js"></script>
+                <script src="https://imobiliariadiogenes.com.br/busca/js/jquery.flexslider-min.js"></script>
 
                 <script>
                 jQuery(document).ready(function(){
