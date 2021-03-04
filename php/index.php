@@ -27,13 +27,15 @@
 
                         echo '<div class="alert alert-success text-center">Atualização executada com sucesso!</div>';
                         echo '<script> setTimeout(function(){ location.href = "index.php" },3000); </script>';
+                      }else{
+                        ?>
+                          <form method="post" action="index.php">
+                              <input type="submit" class="btn btn-primary" name="atualizar" value="Atualizar" />
+                          </form>
+                        <?php
                       }
                     ?>
 
-
-                    <form method="post" action="index.php">
-                        <input type="submit" class="btn btn-primary" name="atualizar" value="Atualizar" />
-                    </form>
                 </div>
             </div>
 

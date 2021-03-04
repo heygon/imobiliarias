@@ -1,0 +1,481 @@
+
+        <!doctype html>
+            <html lang="pt-BR">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                
+            
+                <meta property="og:site_name" content="Diógenes Imóveis">
+                <meta property="og:title" content="AVENIDA SÃO FRANCISCO DE ASSIS CÓRREGO DO MEIO" />
+                <meta property="og:description" content="Veja mais detalhes sobre o imóvel deste link" />
+                <meta property="og:image" itemprop="image" content="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921785.jpg">
+                
+                
+                        
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" href="https://imobiliariadiogenes.com.br/busca/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://imobiliariadiogenes.com.br/busca/css/estilo.css">
+                <title>Diógenes Imóveis</title>
+
+
+
+                <script type="text/javascript" src="https://imobiliariadiogenes.com.br/busca/js/jquery.js" ></script>
+                <script type="text/javascript" src="https://imobiliariadiogenes.com.br/busca/js/popper.min.js"></script>
+                <script src="https://imobiliariadiogenes.com.br/busca/js/bootstrap.min.js"></script>
+                <script src="https://imobiliariadiogenes.com.br/busca/js/jquery.flexslider-min.js"></script>
+
+                <script>
+                jQuery(document).ready(function(){
+
+                    
+                    function formatValor(e){
+                        var valor = parseInt(e);
+                        valor = valor.toLocaleString("pt-br",{style: "currency", currency: "BRL"});
+                        return valor;
+                    }
+
+
+
+                    jQuery(".btnEnviarContato").click(function(){
+                    jQuery(".btnEnviarContato").hide().before('<div class=" load col-12 center-align ">Enviado...</div>');
+
+                    var nomeEmail = jQuery(".nomeEmail").val();
+                    var telefoneEmail = jQuery(".telefoneEmail").val();
+                    var emailEmail = jQuery(".emailEmail").val();
+                    var corpoEmail = jQuery(".corpoEmail").val();
+
+
+
+                    jQuery.ajax({
+                        url: "php/functions.php",
+                        type: "POST",
+                        data:
+                        {
+                            enviarContato:"",
+                            nomeEmail,
+                            telefoneEmail,
+                            emailEmail,
+                            corpoEmail,
+                        }
+                        })
+                        .done(function(xhr) {
+                            //console.log(xhr);
+                            if(xhr.resp = "s"){
+                        
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").before('<div class=" load alert alert-success col-12 text-center ">Sucesso</div>');
+                            setTimeout(function(){
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").fadeIn();
+                            },3000);
+                        
+                            }else{
+                        
+
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").before('<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>');
+                            setTimeout(function(){
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").fadeIn();
+                            },3000);
+                        
+                            }
+
+                        })
+                        .fail(function() {
+                            
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").before('<div class=" load alert alert-success col-12 text-center ">Erro ao enviar</div>');
+                            setTimeout(function(){
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").fadeIn();
+                            },3000);
+
+                        });
+
+                    });              
+
+
+                    jQuery(".carousel-indicators li img").on("click", function () {
+                        var img = $(this).attr("src");
+                        console.log(img);
+                    
+                        jQuery("#imagemCarrousel").fadeIn();
+                        jQuery("#recebeImagemGrande").html('<img src="'+img+'" style="width:100%" />');
+                        
+                    });
+                    
+                    
+                    
+                    
+                    jQuery(".carousel-item img").on("click", function () {
+                        var img = $(this).attr("src");
+                        console.log(img);
+                    
+                        $("#imagemCarrousel").fadeIn();
+                        $("#recebeImagemGrande").html('<img src="'+img+'" style="width:100%"/>');
+                        
+                    });
+                    
+                    $(".fecharImgDestaque").click(function(){
+                        $("#imagemCarrousel").hide();
+                    });
+
+                });
+                </script>
+
+
+
+
+                <style>
+                    #imagemCarrousel{
+                        position: fixed;
+                        top: 0px;
+                        left: 0px;
+                        height: 100%;
+                        width: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        display: none;
+                        z-index:999;
+                    }
+                    #imagemCarrousel strong{
+                        position: fixed;
+                        top: 15px;
+                        right: 15px;
+                        color:#fff;
+                    }
+                    #imagemCarrousel #recebeImagemGrande{
+                        height: 90%;
+                        width: 90%;
+                        margin-left:5%;
+                        margin-top:3%;
+                        overflow: hidden;
+                    }
+                    
+                    .carousel-indicators{
+                        width:80%;
+                        margin-left:10%;
+                        bottom:0px;
+                        height:70px;
+                        overflow:auto;
+                    }
+                    .carousel-indicators::-webkit-scrollbar-track
+                    {
+                        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+                        background-color: transparent;
+                    }
+
+                    .carousel-indicators::-webkit-scrollbar
+                    {
+                        width: 1px;
+                        background-color: transparent;
+                    }
+
+                    .carousel-indicators::-webkit-scrollbar-thumb
+                    {
+                        background-color: transparent;
+                    }
+
+
+                    
+                </style>
+
+            </head>
+            <body>
+                <div class="container-fluid">
+                <div class="dashboard">
+                    <p>&nbsp;</p>
+                </div>
+
+
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////começo da primeira parte////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+                <div class="card text-center">
+                    <div class="primecard card-header">
+                    <h3>
+                        <strong class="TituloImovel">AVENIDA SÃO FRANCISCO DE ASSIS CÓRREGO DO MEIO</strong>
+                    </h3>
+                    </div>  
+
+                    <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-sm-12">
+                        <!-- /////////////////// -->
+                        <!-- //////GALERIA////// -->
+                        <!-- /////////////////// -->
+                        <div id="galeria" class="carousel slide" data-ride="carousel">
+                            
+                            <ol class="carousel-indicators" style="width:80%; margin-left:10%; bottom:0px; height:70px; overflow:auto"><li data-target="#galeria" data-slide-to="0" class="active"><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921786.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="1" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921787.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="2" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921788.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="3" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921789.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="4" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921790.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="5" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921791.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="6" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921792.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="7" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921794.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="8" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921796.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="9" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921798.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="10" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921800.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="11" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921802.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="12" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921805.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="13" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921808.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="14" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921811.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="15" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921814.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="16" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921818.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="17" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921820.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="18" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921823.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="19" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921826.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="20" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921830.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="21" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921833.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="22" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921836.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="23" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921839.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="24" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921842.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="25" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921845.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="26" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921847.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="27" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921849.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="28" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921851.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="29" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921853.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="30" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921854.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="31" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921855.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="32" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921856.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="33" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921857.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="34" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921858.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="35" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921859.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="36" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921860.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="37" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921861.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="38" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921862.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="39" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921863.jpg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li></ol>
+                        
+                            <style>
+                                .carousel-indicators{
+                                    bottom:40px
+                                }
+                                .carousel-indicators li{
+                                    text-indent:0px;
+                                    margin-right:20px;
+                                }
+                                .carousel-indicators li.active{
+                                    opacity:1;
+                                }
+                                .carousel-indicators li.active img{
+                                    border:solid 2px #fff;
+                                }
+                
+                                .carousel-indicators{
+                                    bottom:40px
+                                }
+                                .carousel-indicators li{
+                                    text-indent:0px;
+                                    margin-right:20px;
+                                }
+                                .carousel-indicators li.active{
+                                    opacity:1;
+                                }
+                                .carousel-indicators li.active img{
+                                    border:solid 2px #fff;
+                                }
+                
+                                .carousel-indicators::-webkit-scrollbar-track
+                                {
+                                    -webkit-box-shadow: inset 0 0 1px transparent;
+                                    background-color: transparent;
+                                }
+                
+                                .carousel-indicators::-webkit-scrollbar
+                                {
+                                    width: 1px;
+                                    background-color: transparent;
+                                }
+                
+                                .carousel-indicators::-webkit-scrollbar-thumb
+                                {
+                                    background-color: transparent;
+                                }
+
+                                .carousel-inner li{
+                                    list-style:none;
+                                    float:left;
+                                }
+                            </style>
+                        
+                        
+                            <div class="carousel-inner"><div class="carousel-item active  "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921786.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921787.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921788.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921789.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921790.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921791.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921792.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921794.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921796.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921798.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921800.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921802.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921805.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921808.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921811.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921814.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921818.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921820.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921823.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921826.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921830.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921833.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921836.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921839.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921842.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921845.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921847.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921849.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921851.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921853.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921854.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921855.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921856.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921857.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921858.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921859.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921860.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921861.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921862.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/1199921863.jpg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div></div>
+
+
+
+
+
+
+
+                            <a class="carousel-control-prev" href="#galeria" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#galeria" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                            </a>
+
+                            
+
+                        </div>
+                        <!-- /////////////////// -->
+                        <!-- //////GALERIA////// -->
+                        <!-- /////////////////// -->
+                        </div>
+
+                        <div class="col-lg-4 col-sm-12">
+                        <div class="card">
+                            <div class="card-header sub">
+                            <strong>Valor do imóvel <br/> <span class="recebePrecoVenda">R$1500000.00</span> </strong>
+                            
+                            </div>
+                            <div class="card-body text-left">
+                            <ul class="recebeInfosImoveis">
+                                <li>Código do imóvel : 1506750</li>
+                                <li>Cidade : Padre Bernardo</li>
+                                <li>UF : GO</li>
+                                
+                                <li>Área total m<sup>2</sup> : 34000000</li>
+                            </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-header sub">
+                            <strong> Compartilhe essa oferta</strong>
+                            </div>
+                            <div class="icones card-body">
+                            <div class="row">
+                                <a class="col-3 compartilharFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=1506750" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cfacebook.png"></a>
+                                <a class="col-3 compartilharWhats" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=1506750" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cwhatsapp.png"></a>
+                                <a class="col-3  compartilharTwitter" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=1506750" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/ctwitter.png"></a>
+                                <a class="col-3  compartilharEmail" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i=1506750" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cemail.png"></a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                    </div>
+                    </div>
+                </div>
+
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////começo da segnuda parte/////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+                <br>
+                <div class="seccard card">
+                <div class="row">
+
+
+
+                    <div class="col-lg-8 col-sm-12">
+                    
+                    <div class="row">
+                        <div class="col">
+                        <div class="card">
+                            <div class="card-header sub">
+                            <strong>Informações completas do imóvel</strong>
+                            </div>
+                            <div class="card-body recebeObservacoes">EXCELENTE PROPRIEDADE COM 34 HECTARES, 
+DIVERSAS NASCENTES MUITA ÁGUA, 
+CÓRREGO DO MEIO, 8 TANQUES PARA PEIXES, 
+RODA D´ÁGUA CASA SEDE COM 7 QUARTOS SENDO 4 SUÍTES COM ABASTECIMENTO COM ÁGUA NASCENTE, 
+ÁREA DE LAZER COBERTA COM CHURRASQUEIRA E FOGÃO CAIPIRA COM 2 BANHEIROS E DEPÓSITO.
+ARVORES FRUTÍFERAS: ACEROLA, AÇAI, MANGA (coração de boi, coquinho, manteiga), ABACATE, LIMÃO, JABUTICABA, CEREJA, GOIABA, LARANJA, CAJU ANÃO E GRANDE, POCÃ, GRAVIOLA, MEXERICA, PITANGA, GRAVIOLA, CARAMBOLA, PITANGA, AMORA, CAJU, BANANA, JACA, JAMELÃO, NESPERA.FOLHA DE LOURO, GENIPAPO, NEEM INDIANO.
+
+CASA CASEIRO, CASA DE APOIO GALINHEIRO DIVIDIDA COM ARAME LISO COM 6 FIOS,ENERGIA TRIFÁSICA.2 KM DO ASFALTO.
+
+Visitas: Diógenes 99824-6212 /  4101-8555 
+ 0.71229300</div> 
+                        </div>  
+                        
+                        </div>
+                    </div>
+                    
+                    </br>
+                    
+
+                    <div class="row">
+                        <div class="recebeVideo col-12">
+
+                            <!--
+                                //console.log(obj.Video);
+                                var video = obj.Video.split("=");
+                                if(video.length >= 2){
+                                    video = video[1].split("&");
+                                    video = video[0];
+                                    video = "https://www.youtube.com/embed/"+video;
+                                }else{
+                                    video = video[0];
+                                }
+
+                                
+                                -->
+                            
+
+                            
+
+                        </div>
+                    </div>
+
+                    
+                
+                    </br>
+                    <div class="row ">
+                        <div class="recebeMapa col-12"></div>
+                    </div>
+
+                
+
+
+                    <div class="col-12">&nbsp;</div>
+                    
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12">
+
+                    <div class="col">
+                        <div class="card">
+                        <div class="sub card-header">
+                            <strong>Fale Conosco</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="talk col-12">
+                                <a href="https://api.whatsapp.com/send?phone=556141018555&text=Ol%C3%A1%20Di%C3%B3genes%20Im%C3%B3veis!" target="_blank">
+                            <h1 class="telefone">
+                                <img style="width:40px;" src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/05/whatsapp.png">
+                                61 4101-8555
+                            </h1>
+                            </a>
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <input class="form-control nomeEmail" type="text" placeholder="Nome" name="nome" id="nomeEmail">
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <input class="form-control telefoneEmail" type="text" placeholder="Telefone" name="Telefone" id="telefoneEmail">
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <input class="form-control emailEmail" type="text" placeholder="E-mail" name="Email" id="emailEmail">
+                            </div>
+                            
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <textarea class="form-control corpoEmail" rows="7">Olá, eu gostaria de obter mais informações sobre este imóvel  de Código 1506750 - AVENIDA SÃO FRANCISCO DE ASSIS CÓRREGO DO MEIO - Padre Bernardo - GO</textarea>
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <h1 class="butao btn btn-success col-12 btnEnviarContato"><strong>enviar</strong></h1>
+                            </div>
+                        </div>
+
+                        </div>
+                        
+                    </div>
+                    </div>
+
+
+                    <div class="col-12">&nbsp;</div>
+                    <div class="col-12">&nbsp;</div>
+                    <div class="col-12">&nbsp;</div>
+
+                <!-- fim da row -->
+                </div>
+                <!-- fim da card -->
+                </div>
+
+                <div id="imagemCarrousel">
+                <strong class="fecharImgDestaque">Fechar</strong>
+                <div id="recebeImagemGrande"></div>
+                </div>
+
+
+
+                <div id="ImageFull" style="display:none; position:fixed; top:0px; left:0px; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:20">
+                <img src="img/times.svg" class="closeImageFull" style="position:fixed; top:16px; right:16px; color:#fff; height:35px; " />
+
+                <img src="img/card.jpg" class="recebeNovaImagem" style="position:fixed; top:30px; width:80%; margin-left:10%; " />
+                </div>
+
+            </body>
+            </html>

@@ -1,12 +1,16 @@
 <?php
 
     $dirname = 'html';
+
+    exec('chmod -R 777 '.$dirname);
+
     array_map('unlink', glob("$dirname/*.*"));
+    //unlink($dirname);
     rmdir($dirname);
 
 
 
-    setlocale(LC_MONETARY, 'pt-br');
+    setlocale(LC_MONETARY, 'pt-BR');
 
     $con = mysqli_connect('localhost','ofer1649_busca','GWRMxTnA68U8QJk','ofer1649_busca');
 
@@ -142,7 +146,7 @@
                         console.log(img);
                     
                         jQuery("#imagemCarrousel").fadeIn();
-                        jQuery("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%" />'."'".');
+                        jQuery("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%; max-height:100% !important;" />'."'".');
                         
                     });
                     
@@ -154,7 +158,7 @@
                         console.log(img);
                     
                         $("#imagemCarrousel").fadeIn();
-                        $("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%"/>'."'".');
+                        $("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%; max-height:100% !important;"/>'."'".');
                         
                     });
                     
@@ -187,7 +191,8 @@
                     }
                     #imagemCarrousel #recebeImagemGrande{
                         height: 90%;
-                        width: 90%;
+                        max-width: 90%;
+                        
                         margin-left:5%;
                         margin-top:3%;
                         overflow: hidden;
@@ -223,6 +228,54 @@
 
             </head>
             <body>
+            
+            
+            
+            <script>
+  
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + "px";
+     
+  }
+
+  
+  jQuery( document ).ready(function() {
+    
+    jQuery("#menu").load( "https://imobiliariadiogenes.com.br/?page_id=1313" );
+
+jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
+    
+    
+});
+  
+  
+  
+  
+
+  
+</script>
+
+
+<a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center>
+    <img src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/06/logoAvatar-1.png" alt="" title="" height="auto" width="350px"  sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 901px, 100vw">
+</center></a>
+
+<br>
+<br>
+
+<div style="background-color:#3D4195; widht:100%;">
+    <br>
+    <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center><b>FAZER NOVA BUSCA</b></center></a>
+    <br>
+</div>
+            
+            
+            
+            
+            
+            
+            
+            
                 <div class="container-fluid">
                 <div class="dashboard">
                     <p>&nbsp;</p>
@@ -237,7 +290,7 @@
                 <div class="card text-center">
                     <div class="primecard card-header">
                     <h3>
-                        <strong class="TituloImovel">'.utf8_decode($ri['TituloImovel']).'</strong>
+                        <strong class="TituloImovel" style="color:white !important;">'.utf8_decode($ri['TituloImovel']).'</strong>
                     </h3>
                     </div>  
 
@@ -332,7 +385,7 @@
                         <div class="col-lg-4 col-sm-12">
                         <div class="card">
                             <div class="card-header sub">
-                            <strong>Valor do imóvel <br/> <span class="recebePrecoVenda">R$'. ($ri['PrecoVenda'] == '' ? money_format('%.2n', $ri['PrecoLocacao']) : money_format('%.2n', $ri['PrecoVenda']) )  .'</span> </strong>
+                            <strong>Valor do imóvel <br/> <span class="recebePrecoVenda">R$'. ($ri['PrecoVenda'] == '' ? number_format($ri['PrecoLocacao'],2,',','.') : number_format($ri['PrecoVenda'],2,',','.') )  .'</span> </strong>
                             
                             </div>
                             <div class="card-body text-left">
@@ -352,10 +405,10 @@
                             </div>
                             <div class="icones card-body">
                             <div class="row">
-                                <a class="col-3 compartilharFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cfacebook.png"></a>
-                                <a class="col-3 compartilharWhats" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cwhatsapp.png"></a>
-                                <a class="col-3  compartilharTwitter" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/ctwitter.png"></a>
-                                <a class="col-3  compartilharEmail" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/detalhes.php?i='.$ri['CodigoImovel'].'" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cemail.png"></a>
+                                <a class="col-3 compartilharFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/php/html/imovel_'.$ri['CodigoImovel'].'.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cfacebook.png"></a>
+                                <a class="col-3 compartilharWhats" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/php/html/imovel_'.$ri['CodigoImovel'].'.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cwhatsapp.png"></a>
+                                <a class="col-3  compartilharTwitter" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/php/html/imovel_'.$ri['CodigoImovel'].'.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/ctwitter.png"></a>
+                                <a class="col-3  compartilharEmail" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/php/html/imovel_'.$ri['CodigoImovel'].'.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cemail.png"></a>
                             </div>
                             </div>
                         </div>
@@ -516,6 +569,12 @@
 
                 <img src="img/card.jpg" class="recebeNovaImagem" style="position:fixed; top:30px; width:80%; margin-left:10%; " />
                 </div>
+                
+                
+                
+                <iframe src="https://imobiliariadiogenes.com.br/rodape" id="urlImov" width="100%" frameborder="0"  onload="resizeIframe(this)"></iframe>
+            
+                
 
             </body>
             </html>';
@@ -523,7 +582,9 @@
             //echo $html;
 
             sleep(3);
-            mkdir("html", 0755);
+            if(!is_dir('html')){
+                mkdir("html", 0755);
+            }
             $handle = fopen("html/imovel_".$ri['CodigoImovel'].".html", "w+");
             fwrite($handle, $html);
             fclose($handle);

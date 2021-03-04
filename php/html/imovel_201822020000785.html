@@ -1,0 +1,539 @@
+
+        <!doctype html>
+            <html lang="pt-BR">
+            <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                
+            
+                <meta property="og:site_name" content="Diógenes Imóveis">
+                <meta property="og:title" content="DIÓGENES VENDE - ÓTIMA CASA ARAPOANGAS, PLANATINA/DF" />
+                <meta property="og:description" content="Veja mais detalhes sobre o imóvel deste link" />
+                <meta property="og:image" itemprop="image" content="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OC5qcGVn5eea1fdc5e5f1.jpeg">
+                
+                
+                        
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" href="https://imobiliariadiogenes.com.br/busca/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://imobiliariadiogenes.com.br/busca/css/estilo.css">
+                <title>Diógenes Imóveis</title>
+
+
+
+                <script type="text/javascript" src="https://imobiliariadiogenes.com.br/busca/js/jquery.js" ></script>
+                <script type="text/javascript" src="https://imobiliariadiogenes.com.br/busca/js/popper.min.js"></script>
+                <script src="https://imobiliariadiogenes.com.br/busca/js/bootstrap.min.js"></script>
+                <script src="https://imobiliariadiogenes.com.br/busca/js/jquery.flexslider-min.js"></script>
+
+                <script>
+                jQuery(document).ready(function(){
+
+                    
+                    function formatValor(e){
+                        var valor = parseInt(e);
+                        valor = valor.toLocaleString("pt-br",{style: "currency", currency: "BRL"});
+                        return valor;
+                    }
+
+
+
+                    jQuery(".btnEnviarContato").click(function(){
+                    jQuery(".btnEnviarContato").hide().before('<div class=" load col-12 center-align ">Enviado...</div>');
+
+                    var nomeEmail = jQuery(".nomeEmail").val();
+                    var telefoneEmail = jQuery(".telefoneEmail").val();
+                    var emailEmail = jQuery(".emailEmail").val();
+                    var corpoEmail = jQuery(".corpoEmail").val();
+
+
+
+                    jQuery.ajax({
+                        url: "php/functions.php",
+                        type: "POST",
+                        data:
+                        {
+                            enviarContato:"",
+                            nomeEmail,
+                            telefoneEmail,
+                            emailEmail,
+                            corpoEmail,
+                        }
+                        })
+                        .done(function(xhr) {
+                            //console.log(xhr);
+                            if(xhr.resp = "s"){
+                        
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").before('<div class=" load alert alert-success col-12 text-center ">Sucesso</div>');
+                            setTimeout(function(){
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").fadeIn();
+                            },3000);
+                        
+                            }else{
+                        
+
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").before('<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>');
+                            setTimeout(function(){
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").fadeIn();
+                            },3000);
+                        
+                            }
+
+                        })
+                        .fail(function() {
+                            
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").before('<div class=" load alert alert-success col-12 text-center ">Erro ao enviar</div>');
+                            setTimeout(function(){
+                            jQuery(".load").remove();
+                            jQuery(".btnEnviarContato").fadeIn();
+                            },3000);
+
+                        });
+
+                    });              
+
+
+                    jQuery(".carousel-indicators li img").on("click", function () {
+                        var img = $(this).attr("src");
+                        console.log(img);
+                    
+                        jQuery("#imagemCarrousel").fadeIn();
+                        jQuery("#recebeImagemGrande").html('<img src="'+img+'" style="width:100%; max-height:100% !important;" />');
+                        
+                    });
+                    
+                    
+                    
+                    
+                    jQuery(".carousel-item img").on("click", function () {
+                        var img = $(this).attr("src");
+                        console.log(img);
+                    
+                        $("#imagemCarrousel").fadeIn();
+                        $("#recebeImagemGrande").html('<img src="'+img+'" style="width:100%; max-height:100% !important;"/>');
+                        
+                    });
+                    
+                    $(".fecharImgDestaque").click(function(){
+                        $("#imagemCarrousel").hide();
+                    });
+
+                });
+                </script>
+
+
+
+
+                <style>
+                    #imagemCarrousel{
+                        position: fixed;
+                        top: 0px;
+                        left: 0px;
+                        height: 100%;
+                        width: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        display: none;
+                        z-index:999;
+                    }
+                    #imagemCarrousel strong{
+                        position: fixed;
+                        top: 15px;
+                        right: 15px;
+                        color:#fff;
+                    }
+                    #imagemCarrousel #recebeImagemGrande{
+                        height: 90%;
+                        max-width: 90%;
+                        
+                        margin-left:5%;
+                        margin-top:3%;
+                        overflow: hidden;
+                    }
+                    
+                    .carousel-indicators{
+                        width:80%;
+                        margin-left:10%;
+                        bottom:0px;
+                        height:70px;
+                        overflow:auto;
+                    }
+                    .carousel-indicators::-webkit-scrollbar-track
+                    {
+                        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
+                        background-color: transparent;
+                    }
+
+                    .carousel-indicators::-webkit-scrollbar
+                    {
+                        width: 1px;
+                        background-color: transparent;
+                    }
+
+                    .carousel-indicators::-webkit-scrollbar-thumb
+                    {
+                        background-color: transparent;
+                    }
+
+
+                    
+                </style>
+
+            </head>
+            <body>
+            
+            
+            
+            <script>
+  
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + "px";
+     
+  }
+
+  
+  jQuery( document ).ready(function() {
+    
+    jQuery("#menu").load( "https://imobiliariadiogenes.com.br/?page_id=1313" );
+
+jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
+    
+    
+});
+  
+  
+  
+  
+
+  
+</script>
+
+
+<a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center>
+    <img src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/06/logoAvatar-1.png" alt="" title="" height="auto" width="350px"  sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 901px, 100vw">
+</center></a>
+
+<br>
+<br>
+
+<div style="background-color:#3D4195; widht:100%;">
+    <br>
+    <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center><b>FAZER NOVA BUSCA</b></center></a>
+    <br>
+</div>
+            
+            
+            
+            
+            
+            
+            
+            
+                <div class="container-fluid">
+                <div class="dashboard">
+                    <p>&nbsp;</p>
+                </div>
+
+
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////começo da primeira parte////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+                <div class="card text-center">
+                    <div class="primecard card-header">
+                    <h3>
+                        <strong class="TituloImovel" style="color:white !important;">DIÓGENES VENDE - ÓTIMA CASA ARAPOANGAS, PLANATINA/DF</strong>
+                    </h3>
+                    </div>  
+
+                    <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-sm-12">
+                        <!-- /////////////////// -->
+                        <!-- //////GALERIA////// -->
+                        <!-- /////////////////// -->
+                        <div id="galeria" class="carousel slide" data-ride="carousel">
+                            
+                            <ol class="carousel-indicators" style="width:80%; margin-left:10%; bottom:0px; height:70px; overflow:auto"><li data-target="#galeria" data-slide-to="0" class="active"><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMSAoNCkuanBlZw==5eea1fdfea8c6.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="1" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMSAoMikuanBlZw==5eea1fdf4eb46.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="2" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OSAoMikuanBlZw==5eea1fdd0be0e.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="3" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMCAoMikuanBlZw==5eea1fde0e1aa.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="4" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMCAoMykuanBlZw==5eea1fde51695.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="5" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMS5qcGVn5eea1fe043c16.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="6" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMC5qcGVn5eea1fde9a6eb.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="7" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMSAoMykuanBlZw==5eea1fdfa1ba4.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="8" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OCAoMikuanBlZw==5eea1fdc0830a.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="9" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OSAoMSkuanBlZw==5eea1fdcb555e.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li><li data-target="#galeria" data-slide-to="10" class=""><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OS5qcGVn5eea1fdd68712.jpeg" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"></li></ol>
+                        
+                            <style>
+                                .carousel-indicators{
+                                    bottom:40px
+                                }
+                                .carousel-indicators li{
+                                    text-indent:0px;
+                                    margin-right:20px;
+                                }
+                                .carousel-indicators li.active{
+                                    opacity:1;
+                                }
+                                .carousel-indicators li.active img{
+                                    border:solid 2px #fff;
+                                }
+                
+                                .carousel-indicators{
+                                    bottom:40px
+                                }
+                                .carousel-indicators li{
+                                    text-indent:0px;
+                                    margin-right:20px;
+                                }
+                                .carousel-indicators li.active{
+                                    opacity:1;
+                                }
+                                .carousel-indicators li.active img{
+                                    border:solid 2px #fff;
+                                }
+                
+                                .carousel-indicators::-webkit-scrollbar-track
+                                {
+                                    -webkit-box-shadow: inset 0 0 1px transparent;
+                                    background-color: transparent;
+                                }
+                
+                                .carousel-indicators::-webkit-scrollbar
+                                {
+                                    width: 1px;
+                                    background-color: transparent;
+                                }
+                
+                                .carousel-indicators::-webkit-scrollbar-thumb
+                                {
+                                    background-color: transparent;
+                                }
+
+                                .carousel-inner li{
+                                    list-style:none;
+                                    float:left;
+                                }
+                            </style>
+                        
+                        
+                            <div class="carousel-inner"><div class="carousel-item active  "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMSAoNCkuanBlZw==5eea1fdfea8c6.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMSAoMikuanBlZw==5eea1fdf4eb46.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OSAoMikuanBlZw==5eea1fdd0be0e.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMCAoMikuanBlZw==5eea1fde0e1aa.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMCAoMykuanBlZw==5eea1fde51695.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMS5qcGVn5eea1fe043c16.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMC5qcGVn5eea1fde9a6eb.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yNC4wMSAoMykuanBlZw==5eea1fdfa1ba4.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OCAoMikuanBlZw==5eea1fdc0830a.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OSAoMSkuanBlZw==5eea1fdcb555e.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div><div class="carousel-item   "><img src="https://www.okeimoveis.com.br/gestao/public/uploads/imoveis/2039/resV2hhdHNBcHAgSW1hZ2UgMjAyMC0wNi0xNyBhdCAxMC4yMy41OS5qcGVn5eea1fdd68712.jpeg" style="width:100%"><div class="carousel-caption d-none d-md-block"></div></div></div>
+
+
+
+
+
+
+
+                            <a class="carousel-control-prev" href="#galeria" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#galeria" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                            </a>
+
+                            
+
+                        </div>
+                        <!-- /////////////////// -->
+                        <!-- //////GALERIA////// -->
+                        <!-- /////////////////// -->
+                        </div>
+
+                        <div class="col-lg-4 col-sm-12">
+                        <div class="card">
+                            <div class="card-header sub">
+                            <strong>Valor do imóvel <br/> <span class="recebePrecoVenda">R$195.000,00</span> </strong>
+                            
+                            </div>
+                            <div class="card-body text-left">
+                            <ul class="recebeInfosImoveis">
+                                <li>Código do imóvel : 201822020000785</li>
+                                <li>Cidade : BrasÃ­lia</li>
+                                <li>UF : DF</li>
+                                <li>Área privada m<sup>2</sup> : 90</li>
+                                <li>Área total m<sup>2</sup> : 240</li>
+                            </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card">
+                            <div class="card-header sub">
+                            <strong> Compartilhe essa oferta</strong>
+                            </div>
+                            <div class="icones card-body">
+                            <div class="row">
+                                <a class="col-3 compartilharFacebook" href="https://www.facebook.com/sharer/sharer.php?u=https://imobiliariadiogenes.com.br/busca/php/html/imovel_201822020000785.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cfacebook.png"></a>
+                                <a class="col-3 compartilharWhats" href="https://api.whatsapp.com/send?text=https://imobiliariadiogenes.com.br/busca/php/html/imovel_201822020000785.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cwhatsapp.png"></a>
+                                <a class="col-3  compartilharTwitter" href="https://twitter.com/home?status=https://imobiliariadiogenes.com.br/busca/php/html/imovel_201822020000785.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/ctwitter.png"></a>
+                                <a class="col-3  compartilharEmail" href="mailto:#?&subject=&body=https://imobiliariadiogenes.com.br/busca/php/html/imovel_201822020000785.html" target="_blank"><img class="icons" src="http://imobiliariadiogenes.com.br/busca/img/cemail.png"></a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                    </div>
+                    </div>
+                </div>
+
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////começo da segnuda parte/////// -->
+            <!-- /////////////////////////////////// -->
+            <!-- /////////////////////////////////// -->
+                <br>
+                <div class="seccard card">
+                <div class="row">
+
+
+
+                    <div class="col-lg-8 col-sm-12">
+                    
+                    <div class="row">
+                        <div class="col">
+                        <div class="card">
+                            <div class="card-header sub">
+                            <strong>Informações completas do imóvel</strong>
+                            </div>
+                            <div class="card-body recebeObservacoes">LINDA CASA NA REGIÃO DE ARAPONGA
+
+*CASA NOVA, CONSTRUÍDA RECENTEMENTE*
+
+- Casa com piscina
+- 3 Quartos, sendo um com suíte
+- Sala
+- Cozinha ampla, com bancada e pia em mármore, além de armários 
+- Garagem coberta 
+- Próximo ao mercado Ultrabox
+
+AGENDE A SUA VISITA!
+Mias Informações: (61) 4101-8555 / (61) 98561-6215 
+ 0.94840800</div> 
+                        </div>  
+                        
+                        </div>
+                    </div>
+                    
+                    </br>
+                    
+
+                    <div class="row">
+                        <div class="recebeVideo col-12">
+
+                            <!--
+                                //console.log(obj.Video);
+                                var video = obj.Video.split("=");
+                                if(video.length >= 2){
+                                    video = video[1].split("&");
+                                    video = video[0];
+                                    video = "https://www.youtube.com/embed/"+video;
+                                }else{
+                                    video = video[0];
+                                }
+
+                                
+                                -->
+                            
+
+                            
+
+                        </div>
+                    </div>
+
+                    
+                
+                    </br>
+                    <div class="row ">
+                        <div class="recebeMapa col-12"></div>
+                    </div>
+
+                
+
+
+                    <div class="col-12">&nbsp;</div>
+                    
+                    </div>
+
+                    <div class="col-lg-4 col-sm-12">
+
+                    <div class="col">
+                        <div class="card">
+                        <div class="sub card-header">
+                            <strong>Fale Conosco</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="talk col-12">
+                                <a href="https://api.whatsapp.com/send?phone=556141018555&text=Ol%C3%A1%20Di%C3%B3genes%20Im%C3%B3veis!" target="_blank">
+                            <h1 class="telefone">
+                                <img style="width:40px;" src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/05/whatsapp.png">
+                                61 4101-8555
+                            </h1>
+                            </a>
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <input class="form-control nomeEmail" type="text" placeholder="Nome" name="nome" id="nomeEmail">
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <input class="form-control telefoneEmail" type="text" placeholder="Telefone" name="Telefone" id="telefoneEmail">
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <input class="form-control emailEmail" type="text" placeholder="E-mail" name="Email" id="emailEmail">
+                            </div>
+                            
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <textarea class="form-control corpoEmail" rows="7">Olá, eu gostaria de obter mais informações sobre este imóvel  de Código 201822020000785 - DIÓGENES VENDE - ÓTIMA CASA ARAPOANGAS, PLANATINA/DF - Brasília - DF</textarea>
+                            </div>
+
+                            <div class="col-12">&nbsp;</div>
+
+                            <div class="col-12">
+                            <h1 class="butao btn btn-success col-12 btnEnviarContato"><strong>enviar</strong></h1>
+                            </div>
+                        </div>
+
+                        </div>
+                        
+                    </div>
+                    </div>
+
+
+                    <div class="col-12">&nbsp;</div>
+                    <div class="col-12">&nbsp;</div>
+                    <div class="col-12">&nbsp;</div>
+
+                <!-- fim da row -->
+                </div>
+                <!-- fim da card -->
+                </div>
+
+                <div id="imagemCarrousel">
+                <strong class="fecharImgDestaque">Fechar</strong>
+                <div id="recebeImagemGrande"></div>
+                </div>
+
+
+
+                <div id="ImageFull" style="display:none; position:fixed; top:0px; left:0px; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:20">
+                <img src="img/times.svg" class="closeImageFull" style="position:fixed; top:16px; right:16px; color:#fff; height:35px; " />
+
+                <img src="img/card.jpg" class="recebeNovaImagem" style="position:fixed; top:30px; width:80%; margin-left:10%; " />
+                </div>
+                
+                
+                
+                <iframe src="https://imobiliariadiogenes.com.br/rodape" id="urlImov" width="100%" frameborder="0"  onload="resizeIframe(this)"></iframe>
+            
+                
+
+            </body>
+            </html>
