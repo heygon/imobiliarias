@@ -27,14 +27,14 @@
         $i = 0;
         while ($rim = $img->fetch_array()) {
 
-            $carrousel .= '<div class="carousel-item '.($i == 0 ? "active" : '' ).'  ">';
-            $carrousel .= '<img src="'.$rim['URLArquivo'].'" style="width:100%">';
-            $carrousel .= '<div class="carousel-caption d-none d-md-block"></div>';
+            $carrousel .= '<div  class="carousel-item'.($i == 0 ? "active" : '' ).'  ">';
+            $carrousel .= '<img src="'.$rim['URLArquivo'].'" style="width:100%"/>';
             $carrousel .= '</div>';
             
-            $thumb .= '<li data-target="#galeria" data-slide-to="'.$i.'" class="'. ($i == 0 ? 'active' : '') .'">';
-            $thumb .= '<img src="'.$rim['URLArquivo'].'" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border">';
-            $thumb .= '</li>';
+            $thumb .= '<li data-target="#galeria"  data-slide-to="'.$i.'" class=" '. ($i == 0 ? 'active' : '') .'">';
+            $thumb .= '<img src="'.$rim['URLArquivo'].'" style="min-height:auto; height:50px !important; min-width:auto; width:50px !important; border"/>';
+            $thumb .= '</li>
+            ';
 
             $i++;
         }
@@ -70,103 +70,142 @@
                 <script src="https://imobiliariadiogenes.com.br/busca/js/jquery.flexslider-min.js"></script>
 
                 <script>
-                jQuery(document).ready(function(){
+                    jQuery(document).ready(function(){
 
-                    
-                    function formatValor(e){
-                        var valor = parseInt(e);
-                        valor = valor.toLocaleString("pt-br",{style: "currency", currency: "BRL"});
-                        return valor;
-                    }
-
-
-
-                    jQuery(".btnEnviarContato").click(function(){
-                    jQuery(".btnEnviarContato").hide().before('."'".'<div class=" load col-12 center-align ">Enviado...</div>'."'".');
-
-                    var nomeEmail = jQuery(".nomeEmail").val();
-                    var telefoneEmail = jQuery(".telefoneEmail").val();
-                    var emailEmail = jQuery(".emailEmail").val();
-                    var corpoEmail = jQuery(".corpoEmail").val();
-
-
-
-                    jQuery.ajax({
-                        url: "php/functions.php",
-                        type: "POST",
-                        data:
-                        {
-                            enviarContato:"",
-                            nomeEmail,
-                            telefoneEmail,
-                            emailEmail,
-                            corpoEmail,
+                        
+                        function formatValor(e){
+                            var valor = parseInt(e);
+                            valor = valor.toLocaleString("pt-br",{style: "currency", currency: "BRL"});
+                            return valor;
                         }
-                        })
-                        .done(function(xhr) {
-                            //console.log(xhr);
-                            if(xhr.resp = "s"){
-                        
-                            jQuery(".load").remove();
-                            jQuery(".btnEnviarContato").before('."'".'<div class=" load alert alert-success col-12 text-center ">Sucesso</div>'."'".');
-                            setTimeout(function(){
-                                jQuery(".load").remove();
-                                jQuery(".btnEnviarContato").fadeIn();
-                            },3000);
-                        
-                            }else{
-                        
 
-                            jQuery(".load").remove();
-                            jQuery(".btnEnviarContato").before('."'".'<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>'."'".');
-                            setTimeout(function(){
-                                jQuery(".load").remove();
-                                jQuery(".btnEnviarContato").fadeIn();
-                            },3000);
-                        
+
+
+                        jQuery(".btnEnviarContato").click(function(){
+                        jQuery(".btnEnviarContato").hide().before('."'".'<div class=" load col-12 center-align ">Enviado...</div>'."'".');
+
+                        var nomeEmail = jQuery(".nomeEmail").val();
+                        var telefoneEmail = jQuery(".telefoneEmail").val();
+                        var emailEmail = jQuery(".emailEmail").val();
+                        var corpoEmail = jQuery(".corpoEmail").val();
+
+
+
+                        jQuery.ajax({
+                            url: "php/functions.php",
+                            type: "POST",
+                            data:
+                            {
+                                enviarContato:"",
+                                nomeEmail,
+                                telefoneEmail,
+                                emailEmail,
+                                corpoEmail,
                             }
-
-                        })
-                        .fail(function() {
+                            })
+                            .done(function(xhr) {
+                                //console.log(xhr);
+                                if(xhr.resp = "s"){
                             
-                            jQuery(".load").remove();
-                            jQuery(".btnEnviarContato").before('."'".'<div class=" load alert alert-success col-12 text-center ">Erro ao enviar</div>'."'".');
-                            setTimeout(function(){
-                            jQuery(".load").remove();
-                            jQuery(".btnEnviarContato").fadeIn();
-                            },3000);
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").before('."'".'<div class=" load alert alert-success col-12 text-center ">Sucesso</div>'."'".');
+                                setTimeout(function(){
+                                    jQuery(".load").remove();
+                                    jQuery(".btnEnviarContato").fadeIn();
+                                },3000);
+                            
+                                }else{
+                            
 
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").before('."'".'<div class=" load alert alert-danger col-12 text-center ">Erro ao enviar</div>'."'".');
+                                setTimeout(function(){
+                                    jQuery(".load").remove();
+                                    jQuery(".btnEnviarContato").fadeIn();
+                                },3000);
+                            
+                                }
+
+                            })
+                            .fail(function() {
+                                
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").before('."'".'<div class=" load alert alert-success col-12 text-center ">Erro ao enviar</div>'."'".');
+                                setTimeout(function(){
+                                jQuery(".load").remove();
+                                jQuery(".btnEnviarContato").fadeIn();
+                                },3000);
+
+                            });
+
+                        });              
+
+
+
+                        jQuery(".carousel-indicators li img").on("click", function () {
+                            var img = $(this).attr("src");
+                            console.log(img);
+                        
+                            jQuery("#imagemCarrousel").fadeIn();
+                            jQuery("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%; max-height:100% !important;" />'."'".');
+                        });
+                        
+                        
+                        
+                        
+                        jQuery(".carousel-item img").on("click", function () {
+                            var img = $(this).attr("src");
+                            console.log(img);
+                        
+                            $("#imagemCarrousel").fadeIn();
+                            $("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%; max-height:100% !important;"/>'."'".');
                         });
 
-                    });              
 
+                        function prepraImagemGrande(){
+                            var imagens = [];
+                            $(".carousel-item img").each(function (index, element) {
+                                imagens.push({
+                                    url : $(this).attr('."'".'src'."'".')
+                                });
+                            });
 
-                    jQuery(".carousel-indicators li img").on("click", function () {
-                        var img = $(this).attr("src");
-                        console.log(img);
-                    
-                        jQuery("#imagemCarrousel").fadeIn();
-                        jQuery("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%; max-height:100% !important;" />'."'".');
+                            
+                            var indice = 0;
+                            $('."'".'.btnCarrouselMais'."'".').click(function(){
+                                indice++;
+                                if(indice > imagens.length){
+                                    indice = 0
+                                }
+                                $("#recebeImagemGrande").html('."'".'<img src="'."'".'+imagens[indice].url+'."'".'" style="width:100%; max-height:100% !important;"/>'."'".');
+                            });
+                            $('."'".'.btnCarrouselMenos'."'".').click(function(){
+                                indice--;
+                                if(indice < 0){
+                                    indice = imagens.length - 1;
+                                }
+                                $("#recebeImagemGrande").html('."'".'<img src="'."'".'+imagens[indice].url+'."'".'" style="width:100%; max-height:100% !important;"/>'."'".');
+                            });
+
+                        }
+                        prepraImagemGrande();
+
                         
-                    });
-                    
-                    
-                    
-                    
-                    jQuery(".carousel-item img").on("click", function () {
-                        var img = $(this).attr("src");
-                        console.log(img);
-                    
-                        $("#imagemCarrousel").fadeIn();
-                        $("#recebeImagemGrande").html('."'".'<img src="'."'".'+img+'."'".'" style="width:100%; max-height:100% !important;"/>'."'".');
+                        $(".fecharImgDestaque").click(function(){
+                            $("#imagemCarrousel").hide();
+                        });
                         
-                    });
-                    
-                    $(".fecharImgDestaque").click(function(){
-                        $("#imagemCarrousel").hide();
-                    });
 
-                });
+                    });
+                    function resizeIframe(obj) {
+                        obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + "px";
+                        
+                    }
+                    
+                    jQuery( document ).ready(function() {
+                        jQuery("#menu").load( "https://imobiliariadiogenes.com.br/?page_id=1313" );
+                        jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
+                    });
                 </script>
 
 
@@ -183,11 +222,23 @@
                         display: none;
                         z-index:999;
                     }
-                    #imagemCarrousel strong{
+                    #imagemCarrousel .fecharImgDestaque{
                         position: fixed;
                         top: 15px;
                         right: 15px;
                         color:#fff;
+                    }
+                    #imagemCarrousel .btnCarrouselMais{
+                        position:absolute;
+                        top: 50vh;
+                        right:10px;
+                        z-index: 99999;
+                    }
+                    #imagemCarrousel .btnCarrouselMenos{
+                        position:absolute;
+                        top: 50vh;
+                        left:10px;
+                        z-index: 99999;
                     }
                     #imagemCarrousel #recebeImagemGrande{
                         height: 90%;
@@ -204,6 +255,7 @@
                         bottom:0px;
                         height:70px;
                         overflow:auto;
+                        bottom:40px
                     }
                     .carousel-indicators::-webkit-scrollbar-track
                     {
@@ -222,6 +274,53 @@
                         background-color: transparent;
                     }
 
+                    
+                    .carousel-indicators li{
+                        text-indent:0px;
+                        margin-right:20px;
+                    }
+                    .carousel-indicators li.active{
+                        opacity:1;
+                    }
+                    .carousel-indicators li.active img{
+                        border:solid 2px #fff;
+                    }
+    
+                    .carousel-indicators{
+                        bottom:40px
+                    }
+                    .carousel-indicators li{
+                        text-indent:0px;
+                        margin-right:20px;
+                    }
+                    .carousel-indicators li.active{
+                        opacity:1;
+                    }
+                    .carousel-indicators li.active img{
+                        border:solid 2px #fff;
+                    }
+    
+                    .carousel-indicators::-webkit-scrollbar-track
+                    {
+                        -webkit-box-shadow: inset 0 0 1px transparent;
+                        background-color: transparent;
+                    }
+    
+                    .carousel-indicators::-webkit-scrollbar
+                    {
+                        width: 1px;
+                        background-color: transparent;
+                    }
+    
+                    .carousel-indicators::-webkit-scrollbar-thumb
+                    {
+                        background-color: transparent;
+                    }
+
+                    .carousel-inner li{
+                        list-style:none;
+                        float:left;
+                    }
 
                     
                 </style>
@@ -229,50 +328,19 @@
             </head>
             <body>
             
-            
-            
-            <script>
-  
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + "px";
-     
-  }
 
-  
-  jQuery( document ).ready(function() {
-    
-    jQuery("#menu").load( "https://imobiliariadiogenes.com.br/?page_id=1313" );
+                <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center>
+                    <img src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/06/logoAvatar-1.png" alt="" title="" height="auto" width="350px"  sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 901px, 100vw">
+                </center></a>
 
-jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
-    
-    
-});
-  
-  
-  
-  
+                <br>
+                <br>
 
-  
-</script>
-
-
-<a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center>
-    <img src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/06/logoAvatar-1.png" alt="" title="" height="auto" width="350px"  sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 901px, 100vw">
-</center></a>
-
-<br>
-<br>
-
-<div style="background-color:#3D4195; widht:100%;">
-    <br>
-    <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center><b>FAZER NOVA BUSCA</b></center></a>
-    <br>
-</div>
-            
-            
-            
-            
-            
+                <div style="background-color:#3D4195; widht:100%;">
+                    <br>
+                    <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center><b>FAZER NOVA BUSCA</b></center></a>
+                    <br>
+                </div>
             
             
             
@@ -300,82 +368,25 @@ jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
                         <!-- /////////////////// -->
                         <!-- //////GALERIA////// -->
                         <!-- /////////////////// -->
+                        <div id="galeria2">
                         <div id="galeria" class="carousel slide" data-ride="carousel">
                             
                             <ol class="carousel-indicators" style="width:80%; margin-left:10%; bottom:0px; height:70px; overflow:auto">'.$thumb.'</ol>
                         
-                            <style>
-                                .carousel-indicators{
-                                    bottom:40px
-                                }
-                                .carousel-indicators li{
-                                    text-indent:0px;
-                                    margin-right:20px;
-                                }
-                                .carousel-indicators li.active{
-                                    opacity:1;
-                                }
-                                .carousel-indicators li.active img{
-                                    border:solid 2px #fff;
-                                }
-                
-                                .carousel-indicators{
-                                    bottom:40px
-                                }
-                                .carousel-indicators li{
-                                    text-indent:0px;
-                                    margin-right:20px;
-                                }
-                                .carousel-indicators li.active{
-                                    opacity:1;
-                                }
-                                .carousel-indicators li.active img{
-                                    border:solid 2px #fff;
-                                }
-                
-                                .carousel-indicators::-webkit-scrollbar-track
-                                {
-                                    -webkit-box-shadow: inset 0 0 1px transparent;
-                                    background-color: transparent;
-                                }
-                
-                                .carousel-indicators::-webkit-scrollbar
-                                {
-                                    width: 1px;
-                                    background-color: transparent;
-                                }
-                
-                                .carousel-indicators::-webkit-scrollbar-thumb
-                                {
-                                    background-color: transparent;
-                                }
-
-                                .carousel-inner li{
-                                    list-style:none;
-                                    float:left;
-                                }
-                            </style>
-                        
-                        
+                  
                             <div class="carousel-inner">'.$carrousel.'</div>
 
 
-
-
-
-
-
                             <a class="carousel-control-prev" href="#galeria" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
                             </a>
                             <a class="carousel-control-next" href="#galeria" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
                             </a>
 
-                            
-
+                        </div>
                         </div>
                         <!-- /////////////////// -->
                         <!-- //////GALERIA////// -->
@@ -438,7 +449,9 @@ jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
                             <div class="card-header sub">
                             <strong>Informações completas do imóvel</strong>
                             </div>
-                            <div class="card-body recebeObservacoes">'.utf8_decode($ri['Observacao']).'</div> 
+                            <div class="card-body recebeObservacoes">
+                                '.utf8_decode($ri['Observacao']).'
+                            </div> 
                         </div>  
                         
                         </div>
@@ -450,31 +463,12 @@ jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
                     <div class="row">
                         <div class="recebeVideo col-12">
 
-                            <!--
-                                //console.log(obj.Video);
-                                var video = obj.Video.split("=");
-                                if(video.length >= 2){
-                                    video = video[1].split("&");
-                                    video = video[0];
-                                    video = "https://www.youtube.com/embed/"+video;
-                                }else{
-                                    video = video[0];
-                                }
-
-                                ';
-
-                                $html .= $ri['Video'];
-
-                                $html .= '
-                                -->
                             ';
-
                                 $video = @explode('watch?v=',$ri['Video']);
                                 $video = @explode('&',$video[1]);
                                 $video = @'https://www.youtube.com/embed/'.$video[ 0 ];
 
                             $html .= '
-
                             '.( $ri['Video'] == '' ? '' : '<iframe class="col p-2" width="560" height="400" src="'.$video.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' ).'
 
                         </div>
@@ -484,9 +478,12 @@ jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
                 
                     </br>
                     <div class="row ">
-                        <div class="recebeMapa col-12"></div>
+                        <div class="recebeMapa col-12">
+                            <div class="recebeMapa col-12">
+                                <iframe src="'.$ri['Mapa'].'" class="col-12 p-0" style="height:330px"></iframe>
+                            </div>
+                        </div>
                     </div>
-
                 
 
 
@@ -558,8 +555,10 @@ jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
                 </div>
 
                 <div id="imagemCarrousel">
-                <strong class="fecharImgDestaque">Fechar</strong>
-                <div id="recebeImagemGrande"></div>
+                    <strong class="fecharImgDestaque">Fechar</strong>
+                    <div class="btnCarrouselMenos">< </div>
+                    <div class="btnCarrouselMais">> </div>
+                    <div id="recebeImagemGrande"></div>
                 </div>
 
 
@@ -570,11 +569,7 @@ jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
                 <img src="img/card.jpg" class="recebeNovaImagem" style="position:fixed; top:30px; width:80%; margin-left:10%; " />
                 </div>
                 
-                
-                
                 <iframe src="https://imobiliariadiogenes.com.br/rodape" id="urlImov" width="100%" frameborder="0"  onload="resizeIframe(this)"></iframe>
-            
-                
 
             </body>
             </html>';
@@ -590,5 +585,3 @@ jQuery("#rodape").load( "https://imobiliariadiogenes.com.br/rodape" );
             fclose($handle);
 
         }
-
-        ?>

@@ -85,7 +85,7 @@ class Imob
         }
         if(isset($busca['chave'])){
             if($busca['chave'] == '' || $busca['chave'] == '--'){}else{
-                $sql .= " (TituloImovel LIKE '%".$busca['chave']."%' OR CodigoImovel LIKE '%".$busca['chave']."%') AND ";
+                $sql .= " (TituloImovel LIKE '%".utf8_encode($busca['chave'])."%' OR CodigoImovel LIKE '%".$busca['chave']."%') AND ";
             }
         }
 
@@ -437,23 +437,27 @@ class Imob
                 $lastId = $lastId->fetch_array();
 
                 // Faz o parse das imagens e insere no banco com a ID do anuncio
-                for ($f=0; $f < count($xml[$i]->Fotos->Foto) ; $f++) { 
+                for ($f=0; $f <= count($xml[$i]->Fotos->Foto) ; $f++) { 
 
-                    $this->query("
-                        INSERT INTO Fotos (
-                            NomeArquivo,
-                            URLArquivo,
-                            Principal,
-                            Alterada,
-                            Imovel
-                        ) VALUES(
-                            '".trim($xml[$i]->Fotos->Foto[$f]->NomeArquivo)."',
-                            '".trim($xml[$i]->Fotos->Foto[$f]->URLArquivo)."',
-                            '".trim($xml[$i]->Fotos->Foto[$f]->Principal)."',
-                            '".trim($xml[$i]->Fotos->Foto[$f]->Alterada)."',
-                            '".$lastId['id']."'
-                        )
-                    ");
+                    if($xml[$i]->Fotos->Foto[$f] == null || $xml[$i]->Fotos->Foto[$f] == undefined){
+
+                    }else{
+                        $this->query("
+                            INSERT INTO Fotos (
+                                NomeArquivo,
+                                URLArquivo,
+                                Principal,
+                                Alterada,
+                                Imovel
+                            ) VALUES(
+                                '".trim($xml[$i]->Fotos->Foto[$f]->NomeArquivo)."',
+                                '".trim($xml[$i]->Fotos->Foto[$f]->URLArquivo)."',
+                                '".trim($xml[$i]->Fotos->Foto[$f]->Principal)."',
+                                '".trim($xml[$i]->Fotos->Foto[$f]->Alterada)."',
+                                '".$lastId['id']."'
+                            )
+                        ");
+                    }
                 }
             }
             
