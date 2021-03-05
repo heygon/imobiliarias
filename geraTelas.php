@@ -27,7 +27,7 @@
         $i = 0;
         while ($rim = $img->fetch_array()) {
 
-            $carrousel .= '<div  class="carousel-item'.($i == 0 ? "active" : '' ).'  ">';
+            $carrousel .= '<div  class="carousel-item '.($i == 0 ? "active" : '' ).'  ">';
             $carrousel .= '<img src="'.$rim['URLArquivo'].'" style="width:100%"/>';
             $carrousel .= '</div>';
             
@@ -233,12 +233,20 @@
                         top: 50vh;
                         right:10px;
                         z-index: 99999;
+                        font-size:30px;
+                        font-waight:bold;
+                        color:#fff;
+                        cursor:pointer;
                     }
                     #imagemCarrousel .btnCarrouselMenos{
                         position:absolute;
                         top: 50vh;
                         left:10px;
                         z-index: 99999;
+                        font-size:30px;
+                        font-waight:bold;
+                        color:#fff;
+                        cursor:pointer;
                     }
                     #imagemCarrousel #recebeImagemGrande{
                         height: 90%;
@@ -329,16 +337,18 @@
             <body>
             
 
-                <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center>
-                    <img src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/06/logoAvatar-1.png" alt="" title="" height="auto" width="350px"  sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 901px, 100vw">
-                </center></a>
+                <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;">
+                    <center>
+                        <img src="https://imobiliariadiogenes.com.br/wp-content/uploads/2020/06/logoAvatar-1.png" alt="" title="" height="auto" width="350px"  sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 901px, 100vw"/>
+                    </center>
+                </a>
 
                 <br>
                 <br>
 
                 <div style="background-color:#3D4195; widht:100%;">
                     <br>
-                    <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center><b>FAZER NOVA BUSCA</b></center></a>
+                        <a href="https://imobiliariadiogenes.com.br/buscar-imoveis/" style="color:white;"><center><b>FAZER NOVA BUSCA</b></center></a>
                     <br>
                 </div>
             
