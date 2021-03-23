@@ -439,7 +439,7 @@ class Imob
                 // Faz o parse das imagens e insere no banco com a ID do anuncio
                 for ($f=0; $f <= count($xml[$i]->Fotos->Foto) ; $f++) { 
 
-                    if($xml[$i]->Fotos->Foto[$f] == null || $xml[$i]->Fotos->Foto[$f] == undefined){
+                    if(@$xml[$i]->Fotos->Foto[$f] != null || @$xml[$i]->Fotos->Foto[$f] != undefined){
 
                     }else{
                         $this->query("
